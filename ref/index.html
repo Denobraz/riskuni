@@ -50,7 +50,7 @@
       <button class="lang-btn" data-lang="ru">RU</button>
     </div>
     <a href="#contact" class="nc" data-i18n="nav-cta">Schedule Consultation</a>
-    <button class="ham" onclick="openMob()"><span></span><span></span><span></span></button>
+    <button type="button" class="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -621,7 +621,7 @@
 </footer>
 
 <script>
-function openMob(){document.getElementById('mobMenu').classList.add('open');}
+function toggleMob(){document.getElementById('mobMenu').classList.toggle('open');}
 function closeMob(){document.getElementById('mobMenu').classList.remove('open');}
 document.getElementById('mobClose').onclick=closeMob;
 

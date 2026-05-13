@@ -93,7 +93,7 @@ function __(string $key): string
 <?php } ?>
     </div>
     <a href="<?php echo htmlspecialchars(CALENDLY_BOOKING_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" class="nc"><?php echo __('nav-cta'); ?></a>
-    <button class="ham" onclick="openMob()"><span></span><span></span><span></span></button>
+    <button type="button" class="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -664,7 +664,7 @@ function __(string $key): string
 </footer>
 
 <script>
-function openMob(){document.getElementById('mobMenu').classList.add('open');}
+function toggleMob(){document.getElementById('mobMenu').classList.toggle('open');}
 function closeMob(){document.getElementById('mobMenu').classList.remove('open');}
 document.getElementById('mobClose').onclick=closeMob;
 
