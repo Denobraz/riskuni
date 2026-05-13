@@ -519,7 +519,7 @@ function __(string $key): string
     <div class="media-hd">
       <div>
         <div class="eyebrow"><span class="num">08.</span><span><?php echo __('eb-media'); ?></span></div>
-        <h2 class="sh"><?php echo __('media-h'); ?></h2>
+        <h2 class="sh --<?php echo htmlspecialchars($locale, ENT_QUOTES, 'UTF-8'); ?>"><?php echo __('media-h'); ?></h2>
       </div>
       <p class="media-intro"><?php echo __('media-intro'); ?></p>
     </div>
@@ -567,7 +567,7 @@ function __(string $key): string
   <div class="community-inner">
     <div class="community-l">
       <div class="eyebrow"><span class="num">09.</span><span><?php echo __('eb-8'); ?></span></div>
-      <h2 class="sh"><?php echo __('comm-h'); ?></h2>
+      <h2 class="sh --<?php echo htmlspecialchars($locale, ENT_QUOTES, 'UTF-8'); ?>"><?php echo __('comm-h'); ?></h2>
       <p class="community-text"><?php echo __('comm-text'); ?></p>
     </div>
     <div class="community-r">

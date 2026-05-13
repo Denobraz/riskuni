@@ -1573,6 +1573,7 @@ footer {
 .community .eyebrow::before { background:var(--accent-2); }
 .community .eyebrow .num { color:var(--paper); }
 .community h2 { color:var(--paper); margin:.4rem 0 1.6rem; max-width:14ch; }
+.community h2.--ru { max-width:none; }
 .community h2 .acc { color:var(--accent-2); font-style:italic; }
 .community-text {
     font-family:'Source Serif 4', serif;
@@ -1693,6 +1694,7 @@ footer {
     margin-bottom:3rem;
 }
 .media-hd h2 { margin:.4rem 0 0; max-width:18ch; }
+.media-hd h2.--ru { max-width:none; }
 .media-intro {
     font-family:'Source Serif 4', serif;
     font-style:italic;
