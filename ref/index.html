@@ -1,0 +1,2842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk University · Elina Moshkovich</title>
+<meta name="description" content="Independent risk advisory for companies that are serious about growing. Built on COSO ERM and ISO 31000 principles. Europe, USA and GCC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   RISK UNIVERSITY - Premium Consulting Design
+   ============================================================ */
+
+:root {
+  --bg:        #faf9f6;
+  --bg-2:      #f2f0ea;
+  --bg-3:      #ebe8df;
+  --paper:     #ffffff;
+  --ink:       #161513;
+  --ink-2:     #3a3833;
+  --ink-3:     #6a6660;
+  --ink-4:     #9a948c;
+  --line:      #d8d4c9;
+  --line-2:    #e8e5dc;
+  --accent:    #7c1d2e;
+  --accent-2:  #9a2438;
+  --accent-3:  #5c1322;
+  --dark:      #161513;
+  --dark-2:    #0a0a09;
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+*::selection { background:var(--accent); color:var(--paper); }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter', -apple-system, sans-serif;
+  font-feature-settings:"ss01","cv11";
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+  line-height:1.5;
+}
+
+img { max-width:100%; display:block; }
+
+/* ============ NAV ============ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  background:rgba(250,249,246,.92);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid var(--line-2);
+  transition:padding .3s ease;
+}
+.nav-inner {
+  max-width:1480px; margin:0 auto;
+  display:grid; grid-template-columns:auto 1fr auto auto;
+  align-items:center; gap:2rem;
+  padding:1.1rem 3rem;
+}
+.nb { display:flex; align-items:center; gap:.8rem; text-decoration:none; }
+.nb-mark {
+  width:38px; height:38px;
+  background:var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--paper);
+  font-family:'Source Serif 4', serif;
+  font-weight:600; font-size:1.2rem;
+  letter-spacing:-.02em;
+  position:relative;
+}
+.nb-mark::after {
+  content:''; position:absolute;
+  bottom:-1px; left:-1px; right:-1px;
+  height:1px; background:var(--accent-3);
+}
+.nb-text { display:flex; flex-direction:column; gap:2px; }
+.nb-name {
+  font-family:'Source Serif 4', serif;
+  font-weight:600; font-size:1.02rem;
+  color:var(--ink);
+  letter-spacing:-.015em;
+  line-height:1;
+}
+.nb-sub {
+  font-family:'Inter', sans-serif;
+  font-size:.6rem; font-weight:500;
+  letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-3);
+}
+.nl {
+  display:flex; gap:2.4rem; list-style:none;
+  justify-self:center;
+}
+.nl a {
+  font-family:'Inter', sans-serif;
+  font-size:.78rem; font-weight:500;
+  color:var(--ink-2); text-decoration:none;
+  padding:.4rem 0; position:relative;
+  transition:color .15s;
+}
+.nl a::after {
+  content:''; position:absolute;
+  bottom:0; left:0; height:1px;
+  width:0; background:var(--accent);
+  transition:width .25s ease;
+}
+.nl a:hover { color:var(--accent); }
+.nl a:hover::after { width:100%; }
+.nc {
+  font-family:'Inter', sans-serif;
+  font-size:.78rem; font-weight:500;
+  color:var(--paper); background:var(--ink);
+  padding:.75rem 1.5rem;
+  text-decoration:none;
+  display:inline-flex; align-items:center; gap:.5rem;
+  transition:background .2s;
+  border:1px solid var(--ink);
+}
+.nc::after {
+  content:'\2197'; transition:transform .2s;
+  font-size:.85rem; opacity:.7;
+}
+.nc:hover { background:var(--accent); border-color:var(--accent); }
+.nc:hover::after { transform:translate(2px,-2px); opacity:1; }
+
+.ham {
+  display:none; flex-direction:column; gap:5px;
+  background:none; border:none; padding:.5rem; cursor:pointer;
+}
+.ham span { display:block; width:24px; height:1.5px; background:var(--ink); }
+
+.mob-menu {
+  display:none; position:fixed; inset:0;
+  background:var(--bg); z-index:199;
+  flex-direction:column; align-items:flex-start;
+  justify-content:center; padding:0 2rem; gap:1.8rem;
+}
+.mob-menu.open { display:flex; }
+.mob-menu a {
+  font-family:'Source Serif 4', serif;
+  font-size:2rem; font-weight:500;
+  color:var(--ink); text-decoration:none;
+  letter-spacing:-.02em;
+}
+.mob-menu a:hover { color:var(--accent); }
+.mob-close {
+  position:absolute; top:1.2rem; right:1.5rem;
+  font-size:1.5rem; color:var(--ink);
+  background:none; border:none; cursor:pointer;
+}
+
+/* ============ HERO ============ */
+.hero {
+  padding-top:5rem;
+  background:var(--bg);
+  border-bottom:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+.hero::before {
+  content:''; position:absolute;
+  top:5rem; left:0; right:0; height:1px;
+  background:linear-gradient(90deg, transparent, var(--line), transparent);
+}
+.hero-inner {
+  max-width:1480px; margin:0 auto;
+  display:grid; grid-template-columns:1.25fr 1fr;
+  min-height:calc(100vh - 5rem);
+  position:relative;
+}
+.hero-text {
+  padding:6rem 5rem 6rem 3rem;
+  display:flex; flex-direction:column;
+  justify-content:center;
+  border-right:1px solid var(--line);
+  position:relative;
+}
+.hero-meta {
+  position:absolute; top:2rem; left:3rem;
+  display:flex; align-items:center; gap:1.5rem;
+}
+.hero-meta-num {
+  font-family:'Source Serif 4', serif;
+  font-style:italic; font-weight:400;
+  font-size:.9rem; color:var(--accent);
+}
+.hero-meta-sep {
+  width:30px; height:1px; background:var(--line);
+}
+.hero-meta-label {
+  font-family:'Inter', sans-serif;
+  font-size:.62rem; font-weight:500;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ink-3);
+}
+.hero-eyebrow {
+  font-family:'Inter', sans-serif;
+  font-size:.68rem; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:2.2rem;
+  display:flex; align-items:center; gap:.7rem;
+}
+.hero-eyebrow::before {
+  content:''; width:30px; height:1.5px;
+  background:var(--accent);
+}
+h1 {
+  font-family:'Source Serif 4', serif;
+  font-weight:500;
+  font-size:clamp(2.8rem, 5.2vw, 5.4rem);
+  line-height:1.02;
+  letter-spacing:-.028em;
+  color:var(--ink);
+  margin-bottom:2rem;
+  max-width:14ch;
+}
+h1 .acc {
+  color:var(--accent);
+  font-style:italic;
+  font-weight:500;
+}
+.hero-lead {
+  font-family:'Source Serif 4', serif;
+  font-size:1.18rem;
+  font-weight:400;
+  line-height:1.6;
+  color:var(--ink-2);
+  max-width:34rem;
+  margin-bottom:2.8rem;
+}
+.hero-cta {
+  display:flex; gap:1.5rem; flex-wrap:wrap;
+  margin-bottom:4rem;
+  align-items:center;
+}
+.btn-primary {
+  background:var(--ink); color:var(--paper);
+  font-family:'Inter', sans-serif;
+  font-size:.85rem; font-weight:500;
+  padding:1rem 1.9rem;
+  text-decoration:none;
+  display:inline-flex; align-items:center; gap:.6rem;
+  transition:background .2s, transform .15s;
+  border:1px solid var(--ink);
+}
+.btn-primary::after { content:'\2192'; transition:transform .2s; }
+.btn-primary:hover { background:var(--accent); border-color:var(--accent); transform:translateY(-1px); }
+.btn-primary:hover::after { transform:translateX(4px); }
+
+.btn-text {
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+  font-size:.85rem; font-weight:500;
+  text-decoration:none;
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:1rem 0;
+  border-bottom:1.5px solid var(--ink);
+  transition:color .15s, border-color .15s;
+}
+.btn-text:hover { color:var(--accent); border-bottom-color:var(--accent); }
+
+.hero-stats {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  border-top:1px solid var(--line);
+  padding-top:2rem;
+  gap:2.5rem;
+}
+.hst-n {
+  font-family:'Source Serif 4', serif;
+  font-weight:500;
+  font-size:2.5rem;
+  color:var(--ink);
+  line-height:1; margin-bottom:.6rem;
+  letter-spacing:-.025em;
+}
+.hst-n .small { font-size:1.4rem; color:var(--accent); }
+.hst-l {
+  font-family:'Inter', sans-serif;
+  font-size:.78rem; font-weight:400;
+  color:var(--ink-3);
+  line-height:1.45;
+  letter-spacing:.01em;
+}
+
+/* Hero photo */
+.hero-photo {
+  position:relative;
+  background:var(--bg-2);
+  overflow:hidden;
+  display:flex; align-items:flex-end;
+}
+.hero-photo img {
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:58% 22%;
+  filter:contrast(1.02) saturate(.95);
+}
+.hero-photo::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(22,21,19,0) 70%, rgba(22,21,19,.25) 100%);
+  z-index:1;
+}
+.hero-photo-card {
+  position:absolute;
+  bottom:2rem; left:2rem;
+  z-index:2;
+  background:var(--paper);
+  padding:1.6rem 1.8rem;
+  border-left:3px solid var(--accent);
+  max-width:17rem;
+  box-shadow:0 12px 30px rgba(22,21,19,.18);
+}
+.hpc-name {
+  font-family:'Source Serif 4', serif;
+  font-weight:600;
+  font-size:1.25rem;
+  color:var(--ink);
+  letter-spacing:-.015em;
+  line-height:1.1;
+  margin-bottom:.4rem;
+}
+.hpc-role {
+  font-family:'Inter', sans-serif;
+  font-size:.74rem; font-weight:500;
+  color:var(--ink-2);
+  letter-spacing:.02em;
+  line-height:1.5;
+}
+.hpc-line {
+  display:block;
+  width:32px; height:1px;
+  background:var(--accent);
+  margin:.9rem 0;
+}
+.hpc-cred {
+  font-family:'Inter', sans-serif;
+  font-size:.66rem; font-weight:500;
+  color:var(--ink-3);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+
+/* Cinematic photo treatment */
+.hero-photo img {
+  filter:contrast(1.02) saturate(.98);
+  transition:filter .6s ease;
+}
+.hero-photo:hover img { filter:contrast(1.05) saturate(1.02); }
+
+.about-photo {
+  filter:contrast(1.04) saturate(.93);
+  transition:filter .6s ease;
+}
+.about-photo-wrap:hover .about-photo {
+  filter:contrast(1.08) saturate(1);
+}
+
+/* Subtle vertical stripe accent overlay on hero photo */
+.hero-photo::after {
+  content:'';
+  position:absolute;
+  top:0; left:0;
+  width:4px; height:100%;
+  background:var(--accent);
+  z-index:3;
+}
+
+/* ============ CRED BAR ============ */
+.cred-bar {
+  background:var(--bg);
+  padding:2.5rem 3rem;
+  border-bottom:1px solid var(--line);
+}
+.cred-inner {
+  max-width:1480px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:2rem;
+}
+.cred-label {
+  font-family:'Inter', sans-serif;
+  font-size:.68rem; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-3);
+  flex-shrink:0;
+  display:flex; align-items:center; gap:.8rem;
+}
+.cred-label::before {
+  content:''; width:30px; height:1px; background:var(--ink-3);
+}
+.cred-marks {
+  display:flex; align-items:center;
+  gap:3.5rem; flex-wrap:wrap;
+}
+.cred-mark {
+  font-family:'Source Serif 4', serif;
+  font-weight:500;
+  font-size:1.05rem;
+  color:var(--ink);
+  letter-spacing:-.015em;
+  position:relative;
+}
+.cred-mark::after {
+  content:''; position:absolute;
+  bottom:-3px; left:0; width:0; height:1px;
+  background:var(--accent);
+  transition:width .3s ease;
+}
+.cred-mark:hover::after { width:100%; }
+
+/* ============ STATEMENT QUOTE ============ */
+.statement {
+  background:var(--ink); color:var(--paper);
+  padding:8rem 3rem;
+  position:relative;
+  overflow:hidden;
+}
+.statement::before {
+  content:'\201C';
+  font-family:'Source Serif 4', serif;
+  font-size:30rem;
+  position:absolute;
+  top:-2rem; left:2rem;
+  color:var(--accent);
+  opacity:.15;
+  line-height:1;
+  pointer-events:none;
+}
+.statement-inner {
+  max-width:1100px; margin:0 auto;
+  position:relative; z-index:1;
+}
+.statement-text {
+  font-family:'Source Serif 4', serif;
+  font-weight:400;
+  font-size:clamp(1.6rem, 3vw, 2.8rem);
+  line-height:1.3;
+  letter-spacing:-.02em;
+  color:var(--paper);
+}
+.statement-text .acc { color:var(--accent-2); font-style:italic; }
+.statement-attr {
+  margin-top:2.5rem;
+  display:flex; align-items:center; gap:1rem;
+  font-family:'Inter', sans-serif;
+  font-size:.78rem;
+  font-weight:500;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+}
+.statement-attr::before {
+  content:''; width:40px; height:1px;
+  background:var(--accent-2);
+}
+
+/* ============ SHARED ============ */
+.section {
+  padding:7rem 3rem;
+  border-bottom:1px solid var(--line);
+  position:relative;
+}
+.section-inner { max-width:1480px; margin:0 auto; }
+
+.eyebrow {
+  font-family:'Inter', sans-serif;
+  font-size:.68rem; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:1.4rem;
+  display:flex; align-items:center; gap:.8rem;
+}
+.eyebrow::before {
+  content:''; width:30px; height:1.5px;
+  background:var(--accent);
+}
+.eyebrow .num {
+  font-family:'Source Serif 4', serif;
+  font-weight:500; font-style:italic;
+  color:var(--ink);
+  font-size:.95rem; letter-spacing:0;
+  text-transform:none;
+  margin-right:.3rem;
+}
+
+h2.sh {
+  font-family:'Source Serif 4', serif;
+  font-weight:500;
+  font-size:clamp(2.2rem, 3.6vw, 3.8rem);
+  line-height:1.04;
+  letter-spacing:-.025em;
+  color:var(--ink);
+  max-width:18ch;
+}
+h2.sh .acc { color:var(--accent); font-style:italic; }
+
+/* ============ TRIGGERS ============ */
+.section-triggers { background:var(--bg-2); }
+
+.trig-grid {
+  display:grid; grid-template-columns:.95fr 1.6fr;
+  gap:6rem; align-items:flex-start;
+}
+.trig-left { position:sticky; top:7rem; }
+.trig-left h2 { margin:0 0 1.4rem; }
+.trig-sub {
+  font-family:'Source Serif 4', serif;
+  font-size:1.05rem;
+  font-weight:400;
+  font-style:italic;
+  color:var(--ink-2);
+  line-height:1.6;
+  margin-bottom:2.2rem;
+  max-width:24rem;
+}
+
+.trig-list {
+  display:grid; grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line);
+}
+.trig-item {
+  padding:2.2rem 2rem 2rem;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--paper);
+  transition:background .25s, transform .25s;
+  position:relative;
+}
+.trig-item::before {
+  content:''; position:absolute;
+  top:0; left:0; height:2px; width:0;
+  background:var(--accent);
+  transition:width .35s ease;
+}
+.trig-item:hover { background:var(--bg); }
+.trig-item:hover::before { width:100%; }
+.trig-n {
+  font-family:'Source Serif 4', serif;
+  font-weight:500; font-style:italic;
+  font-size:1.4rem;
+  color:var(--accent);
+  letter-spacing:-.02em;
+  margin-bottom:1rem;
+  display:flex; align-items:center; gap:.7rem;
+}
+.trig-n::after {
+  content:''; flex:1; height:1px;
+  background:var(--line);
+}
+.trig-t {
+  font-size:.93rem;
+  font-weight:400;
+  color:var(--ink-2);
+  line-height:1.65;
+}
+.trig-t strong {
+  color:var(--ink);
+  font-weight:600;
+  display:block;
+  margin-bottom:.5rem;
+  font-size:1.02rem;
+  line-height:1.35;
+  letter-spacing:-.01em;
+  font-family:'Source Serif 4', serif;
+}
+
+/* ============ ABOUT ============ */
+.section-about {
+  background:var(--bg);
+  padding:8rem 3rem;
+}
+.about-grid {
+  display:grid; grid-template-columns:.85fr 1.15fr;
+  gap:6rem;
+  align-items:flex-start;
+}
+.about-photo-wrap {
+  position:relative;
+  position:sticky; top:7rem;
+}
+.about-photo {
+  width:100%; aspect-ratio:3/4;
+  object-fit:cover; object-position:top center;
+  display:block;
+}
+.about-photo-tag {
+  background:var(--ink); color:var(--paper);
+  padding:1.4rem 1.6rem;
+  display:flex; flex-direction:column; gap:.4rem;
+}
+.apt-name {
+  font-family:'Source Serif 4', serif;
+  font-weight:600;
+  font-size:1.2rem;
+  letter-spacing:-.015em;
+}
+.apt-role {
+  font-family:'Inter', sans-serif;
+  font-size:.74rem; font-weight:500;
+  color:rgba(255,255,255,.6);
+  letter-spacing:.04em;
+}
+.apt-line {
+  height:1px; background:rgba(255,255,255,.15);
+  margin:.4rem 0;
+}
+.apt-cred {
+  font-family:'Inter', sans-serif;
+  font-size:.68rem; font-weight:500;
+  letter-spacing:.08em; text-transform:uppercase;
+  color:var(--accent-2);
+}
+
+.about-text {}
+.about-text h2 { margin:.4rem 0 2rem; max-width:22ch; }
+.about-body {
+  font-family:'Source Serif 4', serif;
+  font-size:1.1rem;
+  font-weight:400;
+  line-height:1.7;
+  color:var(--ink-2);
+  margin-bottom:2.5rem;
+  max-width:42rem;
+}
+.about-body p + p { margin-top:1.4rem; }
+
+.about-credentials {
+  background:var(--bg-2);
+  padding:2rem 2.2rem;
+  border-left:3px solid var(--accent);
+  margin:2.5rem 0;
+}
+.ac-label {
+  font-family:'Inter', sans-serif;
+  font-size:.66rem; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:1rem;
+}
+.ac-list {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:.6rem 2rem;
+}
+.ac-item {
+  font-family:'Source Serif 4', serif;
+  font-size:1rem;
+  color:var(--ink);
+  line-height:1.5;
+  display:flex; align-items:flex-start; gap:.7rem;
+}
+.ac-item::before {
+  content:''; width:6px; height:6px;
+  background:var(--accent);
+  margin-top:.5rem;
+  flex-shrink:0;
+}
+
+.cq {
+  background:var(--paper);
+  padding:2rem 2.2rem;
+  border-left:3px solid var(--accent);
+  margin:2.5rem 0;
+  position:relative;
+}
+.cq::before {
+  content:'\201C';
+  font-family:'Source Serif 4', serif;
+  font-size:5rem;
+  color:var(--accent);
+  position:absolute;
+  top:-1rem; right:1.5rem;
+  line-height:1; opacity:.2;
+}
+.cq-text {
+  font-family:'Source Serif 4', serif;
+  font-style:italic; font-weight:400;
+  font-size:1.22rem;
+  color:var(--ink);
+  line-height:1.55;
+  margin-bottom:1rem;
+  position:relative; z-index:1;
+}
+.cq-attr {
+  font-family:'Inter', sans-serif;
+  font-size:.7rem; font-weight:600;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-3);
+  display:flex; align-items:center; gap:.7rem;
+}
+.cq-attr::before {
+  content:''; width:24px; height:1px;
+  background:var(--accent);
+}
+
+.about-stats {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+  padding-top:2rem;
+  gap:1.5rem;
+}
+.as-v {
+  font-family:'Source Serif 4', serif;
+  font-weight:500;
+  font-size:1.9rem;
+  color:var(--ink);
+  line-height:1; margin-bottom:.5rem;
+  letter-spacing:-.02em;
+}
+.as-v .small { font-size:1.1rem; color:var(--accent); }
+.as-l {
+  font-family:'Inter', sans-serif;
+  font-size:.74rem; font-weight:400;
+  color:var(--ink-3);
+  line-height:1.45;
+}
+
+/* ============ EXPERTISE ============ */
+.section-exp { background:var(--bg-2); padding:8rem 3rem; }
+
+.exp-hd {
+  display:grid; grid-template-columns:1fr 1.1fr;
+  gap:5rem; align-items:flex-end;
+  padding-bottom:3.5rem;
+  border-bottom:1px solid var(--line);
+  margin-bottom:0;
+}
+.exp-intro {
+  font-family:'Source Serif 4', serif;
+  font-size:1.05rem;
+  font-weight:400;
+  font-style:italic;
+  color:var(--ink-2);
+  line-height:1.6;
+  max-width:34rem;
+  padding-bottom:.5rem;
+}
+
+.exp-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+}
+.ec {
+  padding:3rem 2.2rem 2.5rem;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--paper);
+  transition:background .25s;
+  position:relative;
+}
+.ec:nth-child(3n) { border-right:none; }
+.ec:hover { background:var(--bg); }
+.ec::before {
+  content:''; position:absolute;
+  top:0; left:0; right:0;
+  height:2px; background:var(--accent);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .35s ease;
+}
+.ec:hover::before { transform:scaleX(1); }
+
+.ec-head {
+  display:flex; justify-content:space-between; align-items:flex-start;
+  margin-bottom:1.8rem;
+  padding-bottom:1.4rem;
+  border-bottom:1px solid var(--line-2);
+}
+.ec-n {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:1.6rem;
+  color:var(--accent);
+  letter-spacing:-.02em;
+  line-height:1;
+}
+.ec-cat {
+  font-family:'Inter', sans-serif;
+  font-size:.62rem; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-3);
+  padding-top:.4rem;
+}
+.ec-t {
+  font-family:'Source Serif 4', serif;
+  font-weight:600;
+  font-size:1.4rem;
+  color:var(--ink);
+  margin-bottom:1.1rem;
+  line-height:1.2;
+  letter-spacing:-.02em;
+}
+.ec-d {
+  font-size:.93rem;
+  font-weight:400;
+  color:var(--ink-2);
+  line-height:1.7;
+}
+.ec-pull {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-size:.95rem;
+  color:var(--accent);
+  margin-top:1.2rem;
+  padding-top:1.2rem;
+  border-top:1px dashed var(--line);
+  line-height:1.5;
+}
+
+.ec-feat {
+  grid-column:1/-1;
+  background:var(--ink); color:var(--paper);
+  border-right:none; border-bottom:none;
+  padding:4rem 3rem;
+  display:grid; grid-template-columns:.9fr 1.6fr;
+  gap:4rem; align-items:flex-start;
+  position:relative;
+}
+.ec-feat:hover { background:var(--dark-2); }
+.ec-feat::before { background:var(--accent); }
+.ec-feat .ec-head { border-bottom-color:rgba(255,255,255,.1); padding-bottom:1.4rem; }
+.ec-feat .ec-n { color:var(--paper); }
+.ec-feat .ec-cat { color:var(--ink-4); }
+.ec-feat .ec-t {
+  color:var(--paper);
+  font-size:1.8rem;
+  max-width:18ch;
+  margin-bottom:0;
+}
+.ec-feat .ec-d {
+  color:rgba(255,255,255,.78);
+  font-size:1.05rem; line-height:1.7;
+  max-width:42rem;
+}
+.ec-pills {
+  display:flex; gap:.5rem; flex-wrap:wrap;
+  margin-top:1.8rem;
+}
+.ep {
+  font-family:'Inter', sans-serif;
+  font-size:.7rem; font-weight:500;
+  letter-spacing:.06em;
+  color:var(--paper);
+  border:1px solid rgba(255,255,255,.25);
+  padding:.45rem 1rem;
+  background:rgba(255,255,255,.04);
+}
+
+/* ============ METHOD ============ */
+.section-method {
+  background:var(--bg);
+  padding:8rem 3rem;
+}
+.method-grid {
+  display:grid; grid-template-columns:.95fr 1.2fr;
+  gap:6rem; align-items:flex-start;
+}
+.method-l { position:sticky; top:7rem; }
+.method-l h2 { margin:.4rem 0 1.6rem; max-width:14ch; }
+.method-body {
+  font-family:'Source Serif 4', serif;
+  font-size:1.05rem;
+  font-weight:400;
+  font-style:italic;
+  color:var(--ink-2);
+  line-height:1.65;
+  max-width:28rem;
+  margin-bottom:2.5rem;
+}
+.method-l .btn-primary { display:inline-flex; }
+
+.steps {
+  border-top:1px solid var(--line);
+}
+.step {
+  display:grid; grid-template-columns:auto 1fr auto;
+  gap:2.5rem; align-items:flex-start;
+  padding:2.4rem 0;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  transition:padding-left .3s ease;
+}
+.step:hover { padding-left:1rem; }
+.step:hover .step-bar { width:3rem; }
+.step-n {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:1.7rem;
+  color:var(--accent);
+  line-height:1;
+  width:3rem;
+  letter-spacing:-.02em;
+}
+.step-content {}
+.step-t {
+  font-family:'Source Serif 4', serif;
+  font-weight:600;
+  font-size:1.25rem;
+  color:var(--ink);
+  margin-bottom:.6rem;
+  letter-spacing:-.015em;
+}
+.step-d {
+  font-size:.94rem;
+  font-weight:400;
+  color:var(--ink-2);
+  line-height:1.65;
+  max-width:38rem;
+}
+.step-time {
+  font-family:'Inter', sans-serif;
+  font-size:.66rem; font-weight:600;
+  letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-3);
+  white-space:nowrap;
+  padding-top:.5rem;
+}
+.step-bar {
+  position:absolute;
+  left:0; top:50%;
+  width:0; height:2px;
+  background:var(--accent);
+  transition:width .3s ease;
+}
+
+/* ============ DELIVERABLES ============ */
+.section-deliv {
+  background:var(--ink); color:var(--paper);
+  border-bottom:none;
+  padding:7rem 3rem;
+  position:relative;
+  overflow:hidden;
+}
+.section-deliv::before {
+  content:'OUTPUTS';
+  font-family:'Source Serif 4', serif;
+  font-style:italic; font-weight:400;
+  font-size:18rem;
+  position:absolute;
+  bottom:-3rem; right:-2rem;
+  color:rgba(255,255,255,.025);
+  letter-spacing:-.03em;
+  pointer-events:none;
+  white-space:nowrap;
+}
+.deliv-inner { max-width:1480px; margin:0 auto; position:relative; z-index:1; }
+.deliv-hd {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:5rem; align-items:flex-end;
+  padding-bottom:3rem;
+  border-bottom:1px solid rgba(255,255,255,.15);
+  margin-bottom:0;
+}
+.deliv-hd .eyebrow { color:var(--accent-2); }
+.deliv-hd .eyebrow::before { background:var(--accent-2); }
+.deliv-hd .eyebrow .num { color:var(--paper); }
+.deliv-hd h2 { color:var(--paper); margin:0; max-width:14ch; }
+.deliv-hd-r {
+  font-family:'Source Serif 4', serif;
+  font-size:1.05rem;
+  font-style:italic;
+  font-weight:400;
+  color:rgba(255,255,255,.7);
+  line-height:1.65;
+  padding-bottom:.5rem;
+}
+
+.deliv-grid {
+  display:grid; grid-template-columns:repeat(4,1fr);
+}
+.di {
+  padding:2.8rem 1.8rem;
+  border-right:1px solid rgba(255,255,255,.1);
+  border-bottom:1px solid rgba(255,255,255,.1);
+  position:relative;
+  transition:background .3s;
+}
+.di:last-child { border-right:none; }
+.di:hover { background:rgba(255,255,255,.025); }
+.di-num {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:1.4rem;
+  color:var(--accent-2);
+  margin-bottom:.4rem;
+  letter-spacing:-.02em;
+  line-height:1;
+}
+.di-label {
+  font-family:'Inter', sans-serif;
+  font-size:.62rem; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-4);
+  margin-bottom:1.5rem;
+}
+.di-t {
+  font-family:'Source Serif 4', serif;
+  font-weight:600;
+  font-size:1.25rem;
+  color:var(--paper);
+  margin-bottom:1rem;
+  letter-spacing:-.015em;
+  line-height:1.2;
+}
+.di-d {
+  font-size:.9rem;
+  font-weight:400;
+  color:rgba(255,255,255,.65);
+  line-height:1.65;
+}
+
+/* ============ PROOF ============ */
+.section-proof { background:var(--bg-2); padding:8rem 3rem; }
+.proof-hd {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:5rem; align-items:flex-end;
+  padding-bottom:3.5rem;
+  border-bottom:1px solid var(--line);
+  margin-bottom:3.5rem;
+}
+.proof-hd h2 { margin:.4rem 0 0; }
+.proof-note {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-size:.96rem;
+  font-weight:400;
+  color:var(--ink-3);
+  line-height:1.6;
+  padding-bottom:.5rem;
+  max-width:32rem;
+}
+
+.cases {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+}
+.case {
+  background:var(--paper);
+  border-top:2px solid var(--accent);
+  padding:2.8rem 2.2rem;
+  display:flex; flex-direction:column; gap:1.5rem;
+  transition:transform .25s, box-shadow .25s;
+}
+.case:hover {
+  transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(22,21,19,.08);
+}
+.cs-head {
+  display:flex; justify-content:space-between; align-items:flex-start;
+  padding-bottom:1.4rem;
+  border-bottom:1px solid var(--line);
+}
+.cs-num {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:.95rem;
+  color:var(--accent);
+}
+.cs {
+  font-family:'Inter', sans-serif;
+  font-size:.7rem; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-2);
+  text-align:right;
+  line-height:1.5;
+}
+.csit {
+  font-family:'Source Serif 4', serif;
+  font-weight:400;
+  font-size:.98rem;
+  color:var(--ink-2);
+  line-height:1.7;
+  padding-bottom:1.6rem;
+  border-bottom:1px solid var(--line);
+}
+.crs { display:flex; flex-direction:column; gap:1.2rem; }
+.cr {
+  display:grid; grid-template-columns:auto 1fr;
+  gap:1.2rem; align-items:baseline;
+}
+.cn {
+  font-family:'Source Serif 4', serif;
+  font-weight:600;
+  font-size:1.85rem;
+  color:var(--ink);
+  line-height:1;
+  letter-spacing:-.025em;
+  min-width:3.5rem;
+}
+.cn .small {
+  font-size:1rem; color:var(--accent);
+  font-style:italic;
+  font-weight:500;
+}
+.cd {
+  font-size:.86rem;
+  font-weight:400;
+  color:var(--ink-2);
+  line-height:1.55;
+}
+.cf {
+  font-family:'Inter', sans-serif;
+  font-size:.7rem; font-weight:500;
+  letter-spacing:.08em;
+  color:var(--ink-3);
+  margin-top:auto;
+  padding-top:1.6rem;
+  border-top:1px solid var(--line-2);
+  text-transform:uppercase;
+  display:flex; align-items:center; gap:.7rem;
+}
+.cf::before {
+  content:''; width:20px; height:1px;
+  background:var(--accent);
+}
+
+/* ============ INSIGHTS ============ */
+.section-insights { background:var(--bg); padding:8rem 3rem; }
+.ins-hd {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:5rem; align-items:flex-end;
+  padding-bottom:3.5rem;
+  border-bottom:1px solid var(--line);
+  margin-bottom:3.5rem;
+}
+.ins-hd h2 { margin:.4rem 0 0; }
+.tags-row {
+  display:flex; gap:.5rem; flex-wrap:wrap;
+  padding-bottom:.5rem;
+}
+.tag {
+  font-family:'Inter', sans-serif;
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.04em;
+  color:var(--ink-2);
+  border:1px solid var(--line);
+  background:transparent;
+  padding:.5rem .95rem;
+  transition:all .15s;
+  cursor:default;
+}
+.tag.on, .tag:hover {
+  color:var(--paper); background:var(--ink); border-color:var(--ink);
+}
+
+.posts {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1.8rem;
+}
+.posts .post:nth-child(4),
+.posts .post:nth-child(5) {
+  /* 4th and 5th cards in row 2 -- they will be 1/3 width each, with empty slot,
+     but to balance visually, make them span 1.5 each */
+}
+@media (min-width:961px) {
+  .posts {
+    grid-template-columns:repeat(6,1fr);
+  }
+  .posts .post:nth-child(1),
+  .posts .post:nth-child(2),
+  .posts .post:nth-child(3) {
+    grid-column:span 2;
+  }
+  .posts .post:nth-child(4),
+  .posts .post:nth-child(5) {
+    grid-column:span 3;
+  }
+}
+.post {
+  background:var(--paper);
+  padding:2.6rem 2.2rem;
+  display:flex; flex-direction:column; gap:1.1rem;
+  border:1px solid var(--line-2);
+  transition:transform .2s, border-color .2s, box-shadow .2s;
+  position:relative;
+}
+.post:hover {
+  transform:translateY(-4px);
+  border-color:var(--accent);
+  box-shadow:0 12px 32px rgba(124,29,46,.08);
+}
+.pc-head {
+  display:flex; justify-content:space-between; align-items:center;
+  padding-bottom:1.2rem;
+  border-bottom:1px solid var(--line-2);
+}
+.pc {
+  font-family:'Inter', sans-serif;
+  font-size:.66rem;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.p-num {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-size:.85rem;
+  color:var(--ink-3);
+}
+.pt {
+  font-family:'Source Serif 4', serif;
+  font-weight:600;
+  font-size:1.4rem;
+  color:var(--ink);
+  line-height:1.2;
+  letter-spacing:-.02em;
+}
+.px {
+  font-size:.93rem;
+  font-weight:400;
+  line-height:1.7;
+  color:var(--ink-2);
+  flex:1;
+}
+.pf {
+  font-family:'Inter', sans-serif;
+  font-size:.74rem;
+  font-weight:500;
+  color:var(--ink-2);
+  display:flex; justify-content:space-between; align-items:center;
+  border-top:1px solid var(--line-2);
+  padding-top:1.2rem; margin-top:auto;
+}
+.pa {
+  color:var(--accent);
+  font-size:1.1rem;
+  transition:transform .2s;
+}
+.post:hover .pa { transform:translateX(5px); }
+
+
+/* Post cards as links */
+a.post { text-decoration:none; color:inherit; }
+a.post:hover { text-decoration:none; }
+
+
+/* Conference photo card */
+.media-card.media-card-photo {
+  padding:0;
+  overflow:hidden;
+  background:var(--ink);
+  color:var(--paper);
+  border:1px solid var(--ink);
+  position:relative;
+}
+.media-card-photo:hover { border-color:var(--accent); }
+.mcp-img {
+  width:100%; aspect-ratio:1/1; object-fit:cover;
+  display:block;
+  filter:contrast(1.02) saturate(.95);
+  transition:filter .4s ease;
+}
+.media-card-photo:hover .mcp-img { filter:contrast(1.06) saturate(1.05); }
+.mcp-content {
+  padding:1.8rem 1.8rem 2rem;
+  display:flex; flex-direction:column; gap:.7rem;
+}
+.mcp-type {
+  font-family:'Inter', sans-serif;
+  font-size:.66rem; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent-2);
+  display:flex; align-items:center; gap:.6rem;
+}
+.mcp-type::before {
+  content:''; width:24px; height:1.5px; background:var(--accent-2);
+}
+.mcp-title {
+  font-family:'Source Serif 4', serif;
+  font-weight:600;
+  font-size:1.2rem;
+  color:var(--paper);
+  line-height:1.25;
+  letter-spacing:-.015em;
+}
+.mcp-platform {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-size:.92rem;
+  color:rgba(255,255,255,.65);
+  margin-top:-.3rem;
+}
+.mcp-date {
+  font-family:'Inter', sans-serif;
+  font-size:.7rem;
+  font-weight:500;
+  color:rgba(255,255,255,.5);
+  margin-top:.3rem;
+  letter-spacing:.04em;
+}
+
+/* ============ CTA ============ */
+.section-cta {
+  display:grid; grid-template-columns:1fr 1fr;
+  border-bottom:none;
+  padding:0;
+  background:var(--ink);
+}
+.cta-l {
+  background:var(--accent);
+  color:var(--paper);
+  padding:7rem 4rem;
+  display:flex; flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  overflow:hidden;
+}
+.cta-l-meta {
+  font-family:'Inter', sans-serif;
+  font-size:.7rem; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(255,255,255,.65);
+  margin-bottom:1.2rem;
+  display:flex; align-items:center; gap:.8rem;
+}
+.cta-l-meta::before {
+  content:''; width:30px; height:1.5px;
+  background:rgba(255,255,255,.65);
+}
+.cta-l-num {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  color:rgba(255,255,255,.85);
+  font-size:.95rem;
+  margin-right:.4rem;
+}
+.cta-l h2 {
+  font-family:'Source Serif 4', serif;
+  font-weight:500;
+  font-size:clamp(2.6rem, 4.4vw, 4.5rem);
+  line-height:1.0;
+  color:var(--paper);
+  letter-spacing:-.028em;
+  max-width:14ch;
+  position:relative; z-index:1;
+}
+.cta-l h2 .ital { font-style:italic; color:var(--ink); }
+.cta-l-bottom {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-size:1rem;
+  color:rgba(255,255,255,.75);
+  margin-top:auto;
+  padding-top:3rem;
+  max-width:24rem;
+  line-height:1.6;
+}
+
+.cta-r {
+  padding:7rem 4rem;
+  display:flex; flex-direction:column;
+  justify-content:center; gap:1.8rem;
+  background:var(--ink);
+  color:var(--paper);
+}
+.cta-r .eyebrow { color:var(--accent-2); }
+.cta-r .eyebrow::before { background:var(--accent-2); }
+.cta-r .eyebrow .num { color:var(--paper); }
+.cta-r h3 {
+  font-family:'Source Serif 4', serif;
+  font-weight:500;
+  font-size:1.8rem;
+  line-height:1.2;
+  color:var(--paper);
+  letter-spacing:-.02em;
+  margin-bottom:.5rem;
+  max-width:18ch;
+}
+.cta-sub {
+  font-size:1rem;
+  font-weight:400;
+  color:rgba(255,255,255,.7);
+  line-height:1.7;
+  max-width:30rem;
+}
+.cta-actions {
+  display:flex; flex-direction:column;
+  gap:.85rem; align-items:flex-start;
+  margin-top:.5rem;
+}
+.btn-light {
+  background:var(--paper); color:var(--ink);
+  font-family:'Inter', sans-serif;
+  font-size:.85rem; font-weight:500;
+  padding:1rem 1.9rem;
+  text-decoration:none;
+  display:inline-flex; align-items:center; gap:.6rem;
+  transition:all .2s;
+  border:1px solid var(--paper);
+}
+.btn-light::after { content:'\2192'; transition:transform .2s; }
+.btn-light:hover { background:var(--accent); color:var(--paper); border-color:var(--accent); transform:translateY(-1px); }
+.btn-light:hover::after { transform:translateX(4px); }
+
+.btn-light-text {
+  color:var(--paper);
+  font-family:'Inter', sans-serif;
+  font-size:.85rem; font-weight:500;
+  text-decoration:none;
+  border-bottom:1.5px solid var(--paper);
+  padding:.4rem 0;
+  display:inline-flex; align-items:center; gap:.5rem;
+  transition:color .15s, border-color .15s;
+}
+.btn-light-text:hover { color:var(--accent-2); border-bottom-color:var(--accent-2); }
+
+.tg-link {
+  font-family:'Inter', sans-serif;
+  font-size:.78rem; font-weight:400;
+  color:rgba(255,255,255,.55);
+  text-decoration:none;
+  margin-top:1rem;
+  display:inline-flex; align-items:center; gap:.5rem;
+  transition:color .15s;
+}
+.tg-link:hover { color:var(--accent-2); }
+
+/* ============ FOOTER ============ */
+footer {
+  background:var(--dark-2);
+  color:var(--paper);
+  padding:0;
+}
+.foot-philosophy {
+  padding:5rem 3rem;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.fp-inner {
+  max-width:1480px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 2fr;
+  gap:5rem; align-items:flex-start;
+}
+.fp-label {
+  font-family:'Inter', sans-serif;
+  font-size:.66rem; font-weight:600;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--accent-2);
+  display:flex; align-items:center; gap:.7rem;
+}
+.fp-label::before {
+  content:''; width:30px; height:1.5px; background:var(--accent-2);
+}
+.fp-text {
+  font-family:'Source Serif 4', serif;
+  font-weight:400;
+  font-style:italic;
+  font-size:1.45rem;
+  line-height:1.5;
+  color:rgba(255,255,255,.85);
+  max-width:42rem;
+  letter-spacing:-.01em;
+}
+.fp-text strong { color:var(--paper); font-weight:500; font-style:normal; }
+
+.foot-main {
+  padding:3rem;
+}
+.fm-inner { max-width:1480px; margin:0 auto; }
+.ft {
+  display:flex; align-items:center; justify-content:space-between;
+  padding-bottom:2.2rem;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  flex-wrap:wrap; gap:2rem;
+}
+.fl { display:flex; gap:2rem; list-style:none; flex-wrap:wrap; }
+.fl a {
+  font-family:'Inter', sans-serif;
+  font-size:.8rem;
+  font-weight:400;
+  color:rgba(255,255,255,.6);
+  text-decoration:none;
+  transition:color .15s;
+}
+.fl a:hover { color:var(--paper); }
+.fb2 {
+  display:flex; justify-content:space-between; align-items:center;
+  padding-top:2rem; flex-wrap:wrap; gap:1rem;
+}
+.fcp {
+  font-family:'Inter', sans-serif;
+  font-size:.74rem; font-weight:400;
+  color:rgba(255,255,255,.4);
+}
+.ftg {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-size:.95rem;
+  color:rgba(255,255,255,.5);
+}
+
+
+/* ============ LANGUAGE TOGGLE ============ */
+.lang-toggle {
+  display:flex; align-items:center; gap:.4rem;
+  font-family:'Inter', sans-serif;
+  font-size:.72rem; font-weight:500;
+  letter-spacing:.04em;
+  margin-right:1rem;
+}
+.lang-btn {
+  background:none; border:none;
+  color:var(--ink-3);
+  cursor:pointer; padding:.4rem .55rem;
+  font-family:inherit; font-size:inherit; font-weight:500;
+  letter-spacing:.04em;
+  transition:color .15s;
+  border-bottom:1px solid transparent;
+}
+.lang-btn.active { color:var(--accent); border-bottom-color:var(--accent); }
+.lang-btn:hover { color:var(--ink); }
+.lang-sep { color:var(--ink-4); }
+
+
+.hpc-reach {
+  margin-top:.7rem;
+  padding-top:.7rem;
+  border-top:1px solid var(--line-2);
+  font-family:'Inter', sans-serif;
+  font-size:.66rem;
+  font-weight:500;
+  color:var(--ink-2);
+  line-height:1.45;
+  letter-spacing:.01em;
+}
+
+/* Hero photo card with LinkedIn link */
+.hpc-linkedin {
+  display:flex; align-items:center; gap:.5rem;
+  margin-top:.9rem;
+  font-family:'Inter', sans-serif;
+  font-size:.72rem; font-weight:500;
+  color:var(--accent);
+  text-decoration:none;
+  padding-top:.9rem;
+  border-top:1px solid var(--line-2);
+  transition:color .15s;
+}
+.hpc-linkedin:hover { color:var(--accent-3); }
+.hpc-linkedin svg { width:14px; height:14px; flex-shrink:0; }
+
+/* ============ COMMUNITY SECTION ============ */
+.community {
+  background:var(--ink); color:var(--paper);
+  padding:7rem 3rem;
+  border-bottom:none;
+  position:relative;
+  overflow:hidden;
+}
+.community::before {
+  content:'PRIVATE';
+  font-family:'Source Serif 4', serif;
+  font-style:italic; font-weight:400;
+  font-size:18rem;
+  position:absolute;
+  top:-3rem; right:-2rem;
+  color:rgba(255,255,255,.025);
+  letter-spacing:-.03em;
+  pointer-events:none;
+  line-height:1;
+}
+.community-inner {
+  max-width:1480px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 1.3fr;
+  gap:5rem; align-items:center;
+  position:relative; z-index:1;
+}
+.community .eyebrow { color:var(--accent-2); }
+.community .eyebrow::before { background:var(--accent-2); }
+.community .eyebrow .num { color:var(--paper); }
+.community h2 { color:var(--paper); margin:.4rem 0 1.6rem; max-width:14ch; }
+.community h2 .acc { color:var(--accent-2); font-style:italic; }
+.community-text {
+  font-family:'Source Serif 4', serif;
+  font-size:1.1rem;
+  font-weight:400;
+  font-style:italic;
+  color:rgba(255,255,255,.78);
+  line-height:1.65;
+  margin-bottom:1.8rem;
+  max-width:36rem;
+}
+.community-features {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.1);
+  margin-bottom:2.2rem;
+}
+.cf-item {
+  background:var(--ink);
+  padding:1.4rem 1.6rem;
+  transition:background .2s;
+}
+.cf-item:hover { background:rgba(255,255,255,.03); }
+.cf-label {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:.95rem;
+  color:var(--accent-2);
+  margin-bottom:.4rem;
+}
+.cf-text {
+  font-size:.86rem;
+  font-weight:400;
+  color:rgba(255,255,255,.7);
+  line-height:1.55;
+}
+.community-audience {
+  font-family:'Inter', sans-serif;
+  font-size:.68rem; font-weight:600;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+  margin-bottom:.6rem;
+  display:flex; align-items:center; gap:.7rem;
+}
+.community-audience::before {
+  content:''; width:30px; height:1px;
+  background:rgba(255,255,255,.4);
+}
+.community-aud-list {
+  display:flex; flex-wrap:wrap; gap:.5rem;
+  margin-bottom:2.5rem;
+}
+.aud-chip {
+  font-family:'Inter', sans-serif;
+  font-size:.74rem; font-weight:500;
+  letter-spacing:.02em;
+  color:var(--paper);
+  border:1px solid rgba(255,255,255,.25);
+  padding:.45rem 1rem;
+  background:rgba(255,255,255,.03);
+}
+.community-cta {
+  display:flex; gap:1rem; align-items:center; flex-wrap:wrap;
+}
+.btn-tg {
+  background:var(--accent-2); color:var(--paper);
+  font-family:'Inter', sans-serif;
+  font-size:.85rem; font-weight:500;
+  padding:1rem 1.9rem;
+  text-decoration:none;
+  display:inline-flex; align-items:center; gap:.6rem;
+  transition:background .2s, transform .15s;
+  border:1px solid var(--accent-2);
+}
+.btn-tg::after { content:'\2192'; transition:transform .2s; }
+.btn-tg:hover { background:var(--accent-3); border-color:var(--accent-3); transform:translateY(-1px); }
+.btn-tg:hover::after { transform:translateX(4px); }
+.community-note {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-size:.92rem;
+  color:rgba(255,255,255,.5);
+}
+
+@media(max-width:960px){
+  .community { padding:5rem 1.5rem; }
+  .community-inner { grid-template-columns:1fr; gap:2.5rem; }
+  .community-features { grid-template-columns:1fr; }
+  .lang-toggle { display:none; }
+}
+
+
+/* Hero primary CTA emphasized in accent */
+.hero-cta .btn-primary {
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.hero-cta .btn-primary:hover {
+  background:var(--accent-3);
+  border-color:var(--accent-3);
+}
+
+
+/* ============ FEATURED APPEARANCES ============ */
+.section-media {
+  background:var(--bg);
+  padding:7rem 3rem;
+  border-bottom:1px solid var(--line);
+}
+.media-inner { max-width:1480px; margin:0 auto; }
+.media-hd {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:5rem; align-items:flex-end;
+  padding-bottom:3rem;
+  border-bottom:1px solid var(--line);
+  margin-bottom:3rem;
+}
+.media-hd h2 { margin:.4rem 0 0; max-width:18ch; }
+.media-intro {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-size:1.05rem;
+  font-weight:400;
+  color:var(--ink-2);
+  line-height:1.6;
+  padding-bottom:.5rem;
+  max-width:32rem;
+}
+
+.media-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1.8rem;
+}
+
+.media-card {
+  background:var(--paper);
+  border:1px solid var(--line-2);
+  padding:2.4rem 2rem;
+  display:flex; flex-direction:column; gap:1.2rem;
+  transition:transform .25s, border-color .25s, box-shadow .25s;
+  text-decoration:none;
+  color:inherit;
+  position:relative;
+}
+.media-card:hover {
+  transform:translateY(-4px);
+  border-color:var(--accent);
+  box-shadow:0 12px 30px rgba(124,29,46,.08);
+}
+
+.media-card-featured {
+  background:var(--ink); color:var(--paper);
+  border-color:var(--ink);
+}
+.media-card-featured:hover {
+  border-color:var(--accent);
+  box-shadow:0 16px 40px rgba(22,21,19,.25);
+}
+
+.mc-type {
+  display:flex; align-items:center; gap:.6rem;
+  font-family:'Inter', sans-serif;
+  font-size:.66rem; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent);
+}
+.mc-type::before {
+  content:''; width:24px; height:1.5px; background:var(--accent);
+}
+.media-card-featured .mc-type { color:var(--accent-2); }
+.media-card-featured .mc-type::before { background:var(--accent-2); }
+
+.mc-platform {
+  font-family:'Inter', sans-serif;
+  font-size:.7rem; font-weight:500;
+  color:var(--ink-3);
+  letter-spacing:.04em;
+}
+.media-card-featured .mc-platform { color:rgba(255,255,255,.55); }
+
+.mc-title {
+  font-family:'Source Serif 4', serif;
+  font-weight:600;
+  font-size:1.25rem;
+  color:var(--ink);
+  line-height:1.25;
+  letter-spacing:-.015em;
+}
+.media-card-featured .mc-title { color:var(--paper); }
+.media-card-featured .mc-title.large { font-size:1.55rem; }
+
+.mc-desc {
+  font-size:.88rem;
+  font-weight:400;
+  line-height:1.65;
+  color:var(--ink-2);
+  flex:1;
+}
+.media-card-featured .mc-desc { color:rgba(255,255,255,.7); }
+
+.mc-meta {
+  display:flex; justify-content:space-between; align-items:center;
+  font-family:'Inter', sans-serif;
+  font-size:.7rem;
+  font-weight:500;
+  color:var(--ink-3);
+  border-top:1px solid var(--line-2);
+  padding-top:1.1rem;
+  margin-top:auto;
+  letter-spacing:.02em;
+}
+.media-card-featured .mc-meta {
+  color:rgba(255,255,255,.55);
+  border-top-color:rgba(255,255,255,.1);
+}
+.mc-arrow {
+  color:var(--accent);
+  font-size:1.05rem;
+  transition:transform .2s;
+}
+.media-card:hover .mc-arrow { transform:translateX(4px); }
+
+.mc-host {
+  font-family:'Source Serif 4', serif;
+  font-style:italic;
+  font-size:.92rem;
+  color:var(--accent-2);
+}
+
+@media(max-width:960px){
+  .section-media { padding:5rem 1.5rem; }
+  .media-hd { grid-template-columns:1fr; gap:1.5rem; }
+  .media-grid { grid-template-columns:1fr; }
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1100px) {
+  .hero-text { padding:5rem 3rem 4rem 2.5rem; }
+  .hero-meta { left:2.5rem; }
+}
+@media (max-width:960px) {
+  .nav-inner { grid-template-columns:1fr auto; padding:1rem 1.5rem; gap:0; }
+  .nl { display:none; }
+  .nc { display:none; }
+  .ham { display:flex; }
+
+  .hero-inner { grid-template-columns:1fr; min-height:auto; }
+  .hero-text { padding:5rem 1.5rem 3.5rem; border-right:none; border-bottom:1px solid var(--line); }
+  .hero-meta { left:1.5rem; top:5.5rem; }
+  .hero-photo {
+    aspect-ratio:auto;
+    min-height:auto;
+    height:auto;
+    display:block;
+    position:relative;
+  }
+  .hero-photo img {
+    position:relative;
+    width:100%;
+    height:auto;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    object-position:75% 25%;
+  }
+  .hero-photo::before { display:none; }
+  .hero-photo-card {
+    position:relative;
+    bottom:auto; left:auto;
+    margin:0;
+    max-width:100%;
+    padding:1.6rem 1.8rem 1.8rem;
+    box-shadow:none;
+    border-top:none;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-stats { gap:1rem; }
+  .hst-n { font-size:1.9rem; }
+
+  .cred-bar { padding:2rem 1.5rem; }
+  .cred-marks { gap:1.8rem; }
+  .cred-mark { font-size:.95rem; }
+
+  .statement { padding:5rem 1.5rem; }
+  .statement::before { font-size:18rem; }
+
+  .section { padding:5rem 1.5rem; }
+  .section-deliv { padding:5rem 1.5rem; }
+  .section-about, .section-exp, .section-method, .section-proof, .section-insights { padding:5rem 1.5rem; }
+
+  .trig-grid { grid-template-columns:1fr; gap:3rem; }
+  .trig-left { position:static; }
+  .trig-list { grid-template-columns:1fr; }
+
+  .about-grid { grid-template-columns:1fr; gap:3rem; }
+  .about-photo-wrap { position:static; }
+  .ac-list { grid-template-columns:1fr; }
+  .about-stats { grid-template-columns:1fr 1fr; }
+
+  .exp-hd { grid-template-columns:1fr; gap:1.5rem; padding-bottom:2rem; }
+  .exp-grid { grid-template-columns:1fr; }
+  .ec { border-right:none; }
+  .ec-feat { grid-template-columns:1fr; gap:1.5rem; padding:3rem 2rem; }
+
+  .method-grid { grid-template-columns:1fr; gap:3rem; }
+  .method-l { position:static; }
+  .step { grid-template-columns:auto 1fr; gap:1.5rem; }
+  .step-time { grid-column:2; padding-top:0; }
+
+  .deliv-hd { grid-template-columns:1fr; gap:1.5rem; }
+  .deliv-grid { grid-template-columns:1fr 1fr; }
+
+  .proof-hd { grid-template-columns:1fr; gap:1.5rem; }
+  .cases { grid-template-columns:1fr; }
+
+  .ins-hd { grid-template-columns:1fr; gap:1.5rem; }
+  .posts { grid-template-columns:1fr; }
+
+  .section-cta { grid-template-columns:1fr; }
+  .cta-l { padding:5rem 1.5rem; }
+  .cta-r { padding:5rem 1.5rem; }
+
+  .foot-philosophy { padding:4rem 1.5rem; }
+  .fp-inner { grid-template-columns:1fr; gap:1.5rem; }
+  .foot-main { padding:3rem 1.5rem; }
+}
+
+@media (max-width:640px) {
+  .deliv-grid { grid-template-columns:1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#x2715;</button>
+  <a href="#triggers" onclick="closeMob()">Why Clients Engage</a>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#expertise" onclick="closeMob()">How I Can Help You</a>
+  <a href="#proof" onclick="closeMob()">Engagements</a>
+  <a href="#insights" onclick="closeMob()">Insights</a>
+  <a href="#media" onclick="closeMob()">Featured Appearances</a>
+  <a href="#community" onclick="closeMob()">Community</a>
+  <a href="#contact" onclick="closeMob()" style="color:var(--accent);">Schedule Consultation</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nb">
+      <div class="nb-mark">R</div>
+      <div class="nb-text">
+        <span class="nb-name">Risk University</span>
+        <span class="nb-sub">Europe &middot; USA &middot; GCC</span>
+      </div>
+    </a>
+    <ul class="nl">
+      <li><a href="#triggers" data-i18n="nav-1">Why Clients Engage</a></li>
+      <li><a href="#about" data-i18n="nav-2">About</a></li>
+      <li><a href="#expertise" data-i18n="nav-3">How I Can Help You</a></li>
+      <li><a href="#proof" data-i18n="nav-4">Engagements</a></li>
+      <li><a href="#insights" data-i18n="nav-5">Insights</a></li>
+      <li><a href="#media" data-i18n="nav-media">Featured</a></li>
+      <li><a href="#community" data-i18n="nav-6">Community</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <span class="lang-sep">/</span>
+      <button class="lang-btn" data-lang="ru">RU</button>
+    </div>
+    <a href="#contact" class="nc" data-i18n="nav-cta">Schedule Consultation</a>
+    <button class="ham" onclick="openMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      
+      <div class="hero-eyebrow" data-i18n="hero-eyebrow">Risk Advisory for Companies That Are Serious About Growing</div>
+      <h1 data-i18n="hero-h1">Risk systems built to <span class="acc">work in practice.</span> Not just on paper.</h1>
+      <p class="hero-lead" data-i18n="hero-lead">I work with business owners, CEOs and leadership teams to build risk systems that reflect how their company actually operates. Practical, proportionate, and built to hold up when something goes wrong.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary" data-i18n="hero-cta-1">Schedule a Consultation</a>
+        <a href="#triggers" class="btn-text" data-i18n="hero-cta-2">Is this you?</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hst-n">15<span class="small">+</span></div><div class="hst-l" data-i18n="hero-st-1">Years in Risk<br>Management</div></div>
+        <div><div class="hst-n">8<span class="small">+</span></div><div class="hst-l" data-i18n="hero-st-2">Years as<br>practising CRO</div></div>
+        <div><div class="hst-n" style="font-size:1.4rem; line-height:1.3; letter-spacing:.02em;">MetLife<br>Allianz<br>PwC · KPMG</div><div class="hst-l" data-i18n="hero-st-3">Track record</div></div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="img/hero.jpeg" alt="Elina Moshkovich, Chief Risk Officer">
+      <div class="hero-photo-card">
+        <div class="hpc-name">Elina Moshkovich</div>
+        <div class="hpc-role" data-i18n="hpc-role">CRO &middot; Risk Advisor<br>Fractional CRO</div>
+        <span class="hpc-line"></span>
+        <div class="hpc-cred" data-i18n="hpc-cred">Former CRO &middot; Allianz &middot; MetLife</div>
+        <a href="https://www.linkedin.com/in/elina-moshkovich-41397115" target="_blank" class="hpc-linkedin">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          <span data-i18n="hpc-li">View LinkedIn Profile</span>
+        </a>
+        <div class="hpc-reach" data-i18n="hpc-reach">Risk University channel: senior international risk practitioners (5+ years experience)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="statement-inner">
+    <p class="statement-text" data-i18n="statement">Good risk management for a 50-person company looks <span class="acc">nothing like</span> it does for a 5,000-person one. The frameworks are the same. <span class="acc">Everything else is different.</span></p>
+    <div class="statement-attr" data-i18n="statement-attr">Elina Moshkovich, Risk University</div>
+  </div>
+</section>
+
+<!-- TRIGGERS -->
+<section class="section section-triggers" id="triggers">
+  <div class="section-inner">
+    <div class="trig-grid">
+      <div class="trig-left">
+        <div class="eyebrow"><span class="num">01.</span><span data-i18n="eb-1">Why Clients Engage</span></div>
+        <h2 class="sh" data-i18n="trig-h">The conversation usually starts <span class="acc">here.</span></h2>
+        <p class="trig-sub" data-i18n="trig-sub">You don&rsquo;t need to be a large company to need real risk management. You need to be a company where losing control would cost you something.</p>
+        <a href="#contact" class="btn-primary" data-i18n="trig-cta">Start with a 30-min Call</a>
+      </div>
+      <div class="trig-list">
+        <div class="trig-item"><div class="trig-n">i</div><div class="trig-t"><strong data-i18n="trig-1-t">Something went wrong and it cost money.</strong><span data-i18n="trig-1-d">A client lost, a key person gone, a contract that fell through. The warning signs were visible for weeks. Nobody raised them.</span></div></div>
+        <div class="trig-item"><div class="trig-n">ii</div><div class="trig-t"><strong data-i18n="trig-2-t">An investor or board member asked about your risk management.</strong><span data-i18n="trig-2-d">You gave a confident answer. Later you weren&rsquo;t sure it was entirely true.</span></div></div>
+        <div class="trig-item"><div class="trig-n">iii</div><div class="trig-t"><strong data-i18n="trig-3-t">You want to build a risk system that actually works.</strong><span data-i18n="trig-3-d">Not a folder of policies that describe a company you don&rsquo;t recognise. Something real, proportionate, and yours.</span></div></div>
+        <div class="trig-item"><div class="trig-n">iv</div><div class="trig-t"><strong data-i18n="trig-4-t">Due diligence or a regulatory review is coming.</strong><span data-i18n="trig-4-d">You know governance will be on the agenda. You want to walk in with a clean answer, not improvise one.</span></div></div>
+        <div class="trig-item"><div class="trig-n">v</div><div class="trig-t"><strong data-i18n="trig-5-t">The company grew faster than the structure did.</strong><span data-i18n="trig-5-d">What worked at 20 people isn&rsquo;t working at 80. Decisions fall through gaps. Nobody is sure who owns what.</span></div></div>
+        <div class="trig-item"><div class="trig-n">vi</div><div class="trig-t"><strong data-i18n="trig-6-t">You have policies filed and approved. You also have incidents.</strong><span data-i18n="trig-6-d">The connection between the two is not obvious, and that&rsquo;s the problem.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <img class="about-photo" src="img/about.jpeg" alt="Elina Moshkovich">
+        <div class="about-photo-tag">
+          <div class="apt-name">Elina Moshkovich</div>
+          <div class="apt-role">CRO &middot; Risk Advisor &middot; Fractional CRO</div>
+          <div class="apt-line"></div>
+          <div class="apt-cred">Former CRO &middot; Allianz &middot; MetLife</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="eyebrow"><span class="num">02.</span><span data-i18n="eb-2">About</span></div>
+        <h2 class="sh" data-i18n="about-h">Fifteen years building risk systems where <span class="acc">failure was not an option.</span></h2>
+        <div class="about-body">
+          <p data-i18n="about-p1">Over fifteen years in enterprise risk management across consulting, financial services, and capital-intensive industries. Advisory experience at PwC and KPMG, including the mining sector. More than eight years as Chief Risk Officer, first at MetLife Russia and subsequently at Allianz Russia, leading enterprise-wide risk strategy, capital adequacy oversight, regulatory engagement, and board-level governance transformation.</p>
+          <p data-i18n="about-p2">Led risk management functions through consecutive systemic shocks, including the COVID-19 crisis and the subsequent period of significant regulatory and geopolitical disruption. Through periods of high volatility, the teams I led maintained capital resilience, regulatory stability, and operational continuity. We redesigned risk monitoring frameworks and strengthened executive decision support under uncertainty.</p>
+          <p data-i18n="about-p3">At MetLife Russia I also led the Anti-Fraud function, building a comprehensive fraud risk governance framework that integrated detection analytics, investigation protocols, regulatory alignment, and executive reporting within a highly regulated insurance environment. Led automation initiatives that put risk analytics directly into executive reporting, so leadership saw risk data alongside business decisions instead of in a separate review.</p>
+          <p data-i18n="about-p4">Cross-border experience includes harmonising risk frameworks across EMEA jurisdictions and aligning diverse regulatory requirements into coherent governance architecture. Speaker at international conferences and industry forums, contributor to cross-border podcasts and executive roundtables on board-level risk oversight and executive decision-making under uncertainty.</p>
+          <p data-i18n="about-p5">Today I advise boards and leadership teams on risk management and governance architecture. The focus is on embedding risk into strategic decision-making, strengthening governance design, and analysing how cognitive biases, incentive structures, and leadership maturity shape risk culture.</p>
+        </div>
+        <div class="about-credentials">
+          <div class="ac-label" data-i18n="sectors-label">Sectors &amp; Experience</div>
+          <div class="ac-list">
+            <div class="ac-item" data-i18n="sec-1">Fintech &amp; Financial Services</div>
+            <div class="ac-item" data-i18n="sec-2">SaaS &amp; Technology</div>
+            <div class="ac-item" data-i18n="sec-3">Healthcare &amp; Life Sciences</div>
+            <div class="ac-item" data-i18n="sec-4">Insurance &amp; Asset Management</div>
+            <div class="ac-item" data-i18n="sec-5">Companies from 15 to 5,000 people</div>
+            <div class="ac-item" data-i18n="sec-6">Clients across Europe, USA, GCC</div>
+          </div>
+        </div>
+        <div class="cq">
+          <div class="cq-text" data-i18n="cq-text">We had policies, frameworks, and a compliance team. What we did not have was a risk system that actually worked. Elina found that gap in the first conversation and fixed it in six weeks.</div>
+          
+        </div>
+        <div class="about-stats">
+          <div><div class="as-v">15<span class="small">+</span></div><div class="as-l" data-i18n="about-st-1">Years in risk management consulting</div></div>
+          <div><div class="as-v">8<span class="small">+</span></div><div class="as-l" data-i18n="about-st-2">Years as CRO at MetLife &amp; Allianz</div></div>
+          <div><div class="as-v">10<span class="small">+</span></div><div class="as-l" data-i18n="about-st-3">RM systems built from scratch</div></div>
+          <div><div class="as-v">2-3<span class="small"> wk</span></div><div class="as-l" data-i18n="about-st-4">To initial diagnostic &amp; roadmap</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="section section-exp" id="expertise">
+  <div class="section-inner">
+    <div class="exp-hd">
+      <div>
+        <div class="eyebrow"><span class="num">03.</span><span data-i18n="eb-3">How I Can Help You</span></div>
+        <h2 class="sh" data-i18n="exp-h">Seven ways companies <span class="acc">work with me.</span></h2>
+      </div>
+      <p class="exp-intro" data-i18n="exp-intro">Each engagement is built around what your company actually needs at the stage you are now. No standard packages, no consultancy boilerplate.</p>
+    </div>
+    <div class="exp-grid">
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">i.</span><span class="ec-cat" data-i18n="ec-1-cat">Foundation</span></div>
+        <div class="ec-t" data-i18n="ec-1-t">Risk System Design</div>
+        <div class="ec-d" data-i18n="ec-1-d">You don&rsquo;t have a working risk system, or the one you have describes a company you don&rsquo;t recognise. I build one that fits how your business actually operates: clear on who owns what, simple enough to maintain, solid enough to show investors and regulators.</div>
+        <div class="ec-pull" data-i18n="ec-1-pull">From first conversation to working framework in 4 to 6 weeks.</div>
+      </div>
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">ii.</span><span class="ec-cat" data-i18n="ec-2-cat">Capital</span></div>
+        <div class="ec-t" data-i18n="ec-2-t">Investor &amp; Due Diligence Readiness</div>
+        <div class="ec-d" data-i18n="ec-2-d">Governance always comes up. Whether it is an investment round, an acquisition, or a regulatory review, I work with your leadership team to build the structure and documentation that holds up under real scrutiny, not just looks good in a deck.</div>
+        <div class="ec-pull" data-i18n="ec-2-pull">Investor-ready governance package in 3 weeks.</div>
+      </div>
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">iii.</span><span class="ec-cat" data-i18n="ec-3-cat">Recovery</span></div>
+        <div class="ec-t" data-i18n="ec-3-t">Incident Response</div>
+        <div class="ec-d" data-i18n="ec-3-d">Something went wrong. A financial loss, a compliance breach, a key person who left taking critical knowledge. I find where the structure failed, fix it, and make sure the same gap does not produce a second incident six months later.</div>
+        <div class="ec-pull" data-i18n="ec-3-pull">Root-cause analysis and structural fix, fast.</div>
+      </div>
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">iv.</span><span class="ec-cat" data-i18n="ec-4-cat">Diagnostic</span></div>
+        <div class="ec-t" data-i18n="ec-4-t">Governance &amp; Risk Maturity Assessment</div>
+        <div class="ec-d" data-i18n="ec-4-d">A structured assessment of your corporate governance and risk management maturity. I identify specific weaknesses across decision-making, accountability, controls, escalation and culture. Then I give you a concrete plan to close each gap, in priority order.</div>
+        <div class="ec-pull" data-i18n="ec-4-pull">Specific gaps. Concrete plan. No theoretical frameworks.</div>
+      </div>
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">v.</span><span class="ec-cat" data-i18n="ec-5-cat">Scale</span></div>
+        <div class="ec-t" data-i18n="ec-5-t">Governance for Growth</div>
+        <div class="ec-d" data-i18n="ec-5-d">Your company doubled in 18 months. The way decisions got made at 20 people is breaking at 100. Nobody is certain who owns what. I redesign the structure so accountability keeps pace with growth, without adding bureaucracy that slows it down.</div>
+        <div class="ec-pull" data-i18n="ec-5-pull">Accountability that keeps pace with growth.</div>
+      </div>
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">vi.</span><span class="ec-cat" data-i18n="ec-6-cat">Ongoing</span></div>
+        <div class="ec-t" data-i18n="ec-6-t">Fractional CRO</div>
+        <div class="ec-d" data-i18n="ec-6-d">You need senior risk expertise but not a full-time hire. I work with your leadership team on an ongoing basis: present for the decisions that matter, available for investor conversations that need a credible risk perspective, and reachable when something unexpected happens.</div>
+        <div class="ec-pull" data-i18n="ec-6-pull">Senior risk expertise without a full-time hire.</div>
+      </div>
+
+      <div class="ec ec-feat">
+        <div>
+          <div class="ec-head"><span class="ec-n">vii.</span><span class="ec-cat" data-i18n="ec-7-cat">Featured Practice</span></div>
+          <div class="ec-t" data-i18n="ec-7-t">Risk Culture &amp; Tailored Risk Training</div>
+        </div>
+        <div>
+          <div class="ec-d" data-i18n="ec-7-d">The most costly risk failures in growing companies share one pattern: people who saw the problem and said nothing. I run practical risk management training programmes designed specifically for your company and tailored to each audience: board members, top management, and front-line employees. I design speak-up mechanisms that fit how your team works, and measure whether they are having any effect as a business metric, not an HR score.</div>
+          <div class="ec-pills">
+            <span class="ep" data-i18n="ep-1">Board-level training</span>
+            <span class="ep" data-i18n="ep-2">C-suite workshops</span>
+            <span class="ep" data-i18n="ep-3">Front-line programmes</span>
+            <span class="ep" data-i18n="ep-4">Speak-up design</span>
+            <span class="ep" data-i18n="ep-5">Culture diagnostics</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section section-method" id="methodology">
+  <div class="section-inner">
+    <div class="method-grid">
+      <div class="method-l">
+        <div class="eyebrow"><span class="num">04.</span><span data-i18n="eb-4">Engagement Process</span></div>
+        <h2 class="sh" data-i18n="method-h">Clear from day one. <span class="acc">Yours to keep.</span></h2>
+        <p class="method-body" data-i18n="method-body">I work in stages. Each one produces something usable. No 80-page reports that sit unread. No recommendations list that requires another engagement to implement. When we finish, what we built belongs to your team.</p>
+        <a href="#contact" class="btn-primary" data-i18n="method-cta">Book Your Free Diagnostic</a>
+      </div>
+      <div class="method-r">
+        <div class="steps">
+          <div class="step">
+            <div class="step-bar"></div>
+            <div class="step-n">i.</div>
+            <div class="step-content">
+              <div class="step-t" data-i18n="step-1-t">Initial Consultation, Complimentary</div>
+              <div class="step-d" data-i18n="step-1-d">A 30-minute conversation. I ask about your company and what is worrying you. You get an honest read on where you are. We decide together if it makes sense to go further.</div>
+            </div>
+            <div class="step-time" data-i18n="step-1-time">30 min</div>
+          </div>
+          <div class="step">
+            <div class="step-bar"></div>
+            <div class="step-n">ii.</div>
+            <div class="step-content">
+              <div class="step-t" data-i18n="step-2-t">Risk Mapping</div>
+              <div class="step-d" data-i18n="step-2-d">I document how decisions actually get made, where accountability sits, and where the gaps are. You get a clear picture of your actual risk profile, not a generic framework that could apply to anyone.</div>
+            </div>
+            <div class="step-time" data-i18n="step-2-time">3-5 days</div>
+          </div>
+          <div class="step">
+            <div class="step-bar"></div>
+            <div class="step-n">iii.</div>
+            <div class="step-content">
+              <div class="step-t" data-i18n="step-3-t">Priority Issues First</div>
+              <div class="step-d" data-i18n="step-3-d">I identify the two or three things that could genuinely hurt your business in the next 12 months and give you a concrete plan for each. Not a colour-coded list of 40 items.</div>
+            </div>
+            <div class="step-time" data-i18n="step-3-time">1 week</div>
+          </div>
+          <div class="step">
+            <div class="step-bar"></div>
+            <div class="step-n">iv.</div>
+            <div class="step-content">
+              <div class="step-t" data-i18n="step-4-t">Build With Your Team</div>
+              <div class="step-d" data-i18n="step-4-d">I build the structure with your people, not for them. Run the training, set up the processes, make sure it is working before I step back. Your team knows how to use it and why it matters.</div>
+            </div>
+            <div class="step-time" data-i18n="step-4-time">4-12 weeks</div>
+          </div>
+          <div class="step">
+            <div class="step-bar"></div>
+            <div class="step-n">v.</div>
+            <div class="step-content">
+              <div class="step-t" data-i18n="step-5-t">Available When It Matters</div>
+              <div class="step-d" data-i18n="step-5-d">Investor question, regulatory contact, something unexpected. I stay reachable for the moments when you need a senior risk perspective quickly.</div>
+            </div>
+            <div class="step-time" data-i18n="step-5-time">Ongoing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="section-deliv">
+  <div class="deliv-inner">
+    <div class="deliv-hd">
+      <div>
+        <div class="eyebrow"><span class="num">05.</span><span data-i18n="eb-5">Deliverables</span></div>
+        <h2 class="sh" data-i18n="deliv-h">What you receive at the end of every engagement.</h2>
+      </div>
+      <div class="deliv-hd-r" data-i18n="deliv-r">Every engagement ends with concrete outputs your team owns and can use without me. Structured around four typical client scenarios.</div>
+    </div>
+    <div class="deliv-grid">
+      <div class="di">
+        <div class="di-num">01</div>
+        <div class="di-label" data-i18n="di-1-l">No risk system yet</div>
+        <div class="di-t" data-i18n="di-1-t">Formalised Risk Management System</div>
+        <div class="di-d" data-i18n="di-1-d">For companies without a formalised risk function, or where it exists only on paper. I build a risk management structure designed around your business: key processes, owners, required documentation, and regulatory alignment. Not a generic template. A working system that fits how your company actually operates.</div>
+      </div>
+      <div class="di">
+        <div class="di-num">02</div>
+        <div class="di-label" data-i18n="di-2-l">Existing system, weak results</div>
+        <div class="di-t" data-i18n="di-2-t">Existing System Strengthening</div>
+        <div class="di-d" data-i18n="di-2-d">For companies with an existing risk management function that is not delivering results. I analyse what is not working and why, develop practical recommendations to strengthen the system, and support implementation. Not just a report handover.</div>
+      </div>
+      <div class="di">
+        <div class="di-num">03</div>
+        <div class="di-label" data-i18n="di-3-l">Regulatory pressure</div>
+        <div class="di-t" data-i18n="di-3-t">Regulatory Documentation &amp; Audit Support</div>
+        <div class="di-d" data-i18n="di-3-d">Preparation of risk management documentation aligned with regulatory requirements. Support during regulatory enquiries, inspections and external audits. The goal is to walk in with a credible, defensible answer, not improvise one under pressure.</div>
+      </div>
+      <div class="di">
+        <div class="di-num">04</div>
+        <div class="di-label" data-i18n="di-4-l">Losses from weak governance</div>
+        <div class="di-t" data-i18n="di-4-t">Governance Gap Analysis &amp; Recovery Plan</div>
+        <div class="di-d" data-i18n="di-4-d">Identification of the key weaknesses in decision-making and corporate governance that are producing material losses. A list of priority gaps. A concrete action plan to close each one. Implementation support until the gaps are actually closed.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="section section-proof" id="proof">
+  <div class="section-inner">
+    <div class="proof-hd">
+      <div>
+        <div class="eyebrow"><span class="num">06.</span><span data-i18n="eb-6">Selected Engagements</span></div>
+        <h2 class="sh" data-i18n="proof-h">What changes after working <span class="acc">together.</span></h2>
+      </div>
+      <p class="proof-note" data-i18n="proof-note">All company names and identifying details withheld at client request. All figures confirmed at project close.</p>
+    </div>
+    <div class="cases">
+      <div class="case">
+        <div class="cs-head">
+          <div class="cs-num">i.</div>
+          <div class="cs" data-i18n="case-1-cs">Fintech<br>60 People · Series B</div>
+        </div>
+        <div class="csit" data-i18n="case-1-situation">Lead investor flagged governance gaps two weeks before closing. The company had policies on file but no working risk structure. The deal was at risk of being delayed or repriced.</div>
+        <div class="crs">
+          <div class="cr"><div class="cn">3<span class="small"> wk</span></div><div class="cd" data-i18n="case-1-r1-d">from first call to investor-ready governance package</div></div>
+          <div class="cr"><div class="cn">100<span class="small">%</span></div><div class="cd" data-i18n="case-1-r2-d">of governance questions answered with no follow-up requests</div></div>
+          <div class="cr"><div class="cn">0</div><div class="cd" data-i18n="case-1-r3-d">deal conditions added related to risk management</div></div>
+        </div>
+        <div class="cf" data-i18n="case-1-cf">Investor Readiness &middot; Governance Design</div>
+      </div>
+      <div class="case">
+        <div class="cs-head">
+          <div class="cs-num">ii.</div>
+          <div class="cs" data-i18n="case-2-cs">SaaS<br>120 People</div>
+        </div>
+        <div class="csit" data-i18n="case-2-situation">Finance director found a GBP 180k discrepancy. Investigation showed three approval steps that existed on paper had never been enforced. The team had grown from 15 to 120 in two years.</div>
+        <div class="crs">
+          <div class="cr"><div class="cn">6<span class="small"> wk</span></div><div class="cd" data-i18n="case-2-r1-d">full fraud governance review and control redesign</div></div>
+          <div class="cr"><div class="cn">4</div><div class="cd" data-i18n="case-2-r2-d">approval gaps closed before the incident could repeat</div></div>
+          <div class="cr"><div class="cn">2<span class="small">x</span></div><div class="cd" data-i18n="case-2-r3-d">increase in team-reported risk flags after speak-up training</div></div>
+        </div>
+        <div class="cf" data-i18n="case-2-cf">Fraud Response &middot; Risk Culture</div>
+      </div>
+      <div class="case">
+        <div class="cs-head">
+          <div class="cs-num">iii.</div>
+          <div class="cs" data-i18n="case-3-cs">Healthcare<br>200 People</div>
+        </div>
+        <div class="csit" data-i18n="case-3-situation">Regulator requested documentation of risk management practices. The company had a compliance team but no coherent risk framework. Leadership had two weeks to respond credibly.</div>
+        <div class="crs">
+          <div class="cr"><div class="cn">12<span class="small"> d</span></div><div class="cd" data-i18n="case-3-r1-d">to produce a complete risk framework response</div></div>
+          <div class="cr"><div class="cn">0</div><div class="cd" data-i18n="case-3-r2-d">further regulatory action required after submission</div></div>
+          <div class="cr"><div class="cn">6<span class="small"> mo</span></div><div class="cd" data-i18n="case-3-r3-d">fractional CRO engagement to build the function in-house</div></div>
+        </div>
+        <div class="cf" data-i18n="case-3-cf">Regulatory Response &middot; Fractional CRO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="section section-insights" id="insights">
+  <div class="section-inner">
+    <div class="ins-hd">
+      <div>
+        <div class="eyebrow"><span class="num">07.</span><span data-i18n="eb-7">Insights</span></div>
+        <h2 class="sh" data-i18n="ins-h">What most companies find out <span class="acc">too late.</span></h2>
+      </div>
+      <div class="tags-row">
+        <span class="tag on">Risk Theater</span>
+        <span class="tag on">Policy Theater</span>
+        <span class="tag">Fraud Governance</span>
+        <span class="tag">Risk Culture</span>
+        <span class="tag">Investor Readiness</span>
+        <span class="tag">Escalation Design</span>
+      </div>
+    </div>
+    <div class="posts">
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_governance-boardeffectiveness-riskmanagement-share-7419806316895895553-YcZz" target="_blank" class="post">
+        <div class="pc-head">
+          <div class="pc" data-i18n="post-1-c">Risk Theater</div>
+          <div class="p-num">i.</div>
+        </div>
+        <div class="pt" data-i18n="post-1-t">Risk Theater</div>
+        <div class="px" data-i18n="post-1-d">Risk registers presented. Heat maps reviewed. Mitigation plans approved. And the same risks materialise next quarter. The performance of risk management is not the same as risk management. When the structure cannot challenge the answer, the answer becomes a ritual.</div>
+        <div class="pf"><span data-i18n="post-read">Read on LinkedIn</span><span class="pa">&rarr;</span></div>
+      </a>
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-governance-cro-share-7452290477904691201-qJ_m" target="_blank" class="post">
+        <div class="pc-head">
+          <div class="pc" data-i18n="post-4-c">KRI Design</div>
+          <div class="p-num">ii.</div>
+        </div>
+        <div class="pt" data-i18n="post-4-t">From Strategic Goals to KRIs</div>
+        <div class="px" data-i18n="post-4-d">Most KRI dashboards measure activity, not risk to strategy. The trick is starting with the strategic goal and working backwards: what would have to go wrong for this to fail, what would tell us early, what number captures that. The work is in the translation, not in the dashboard.</div>
+        <div class="pf"><span data-i18n="post-read">Read on LinkedIn</span><span class="pa">&rarr;</span></div>
+      </a>
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-rm2-governance-share-7454169487253135361--UuZ" target="_blank" class="post">
+        <div class="pc-head">
+          <div class="pc" data-i18n="post-5-c">Decision Quality</div>
+          <div class="p-num">iii.</div>
+        </div>
+        <div class="pt" data-i18n="post-5-t">Risk Management That Improves Decision Quality</div>
+        <div class="px" data-i18n="post-5-d">A risk function that produces documents is not the same as one that improves decisions. The difference is not the framework. It is whether the function has the access, the authority, and the credibility to make leadership pause before a decision that should be questioned. Most companies stop at the documents.</div>
+        <div class="pf"><span data-i18n="post-read">Read on LinkedIn</span><span class="pa">&rarr;</span></div>
+      </a>
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-cro-riskculture-share-7429852234730852352-Y9F3" target="_blank" class="post">
+        <div class="pc-head">
+          <div class="pc" data-i18n="post-2-c">Policy Theater</div>
+          <div class="p-num">iv.</div>
+        </div>
+        <div class="pt" data-i18n="post-2-t">Policy Theater</div>
+        <div class="px" data-i18n="post-2-d">Your organisation has a policy for everything. Updated annually. Signed off. Filed correctly. And the incidents keep happening. The gap between document and behaviour is not a training problem. It is a design problem, and adding another policy makes it worse.</div>
+        <div class="pf"><span data-i18n="post-read">Read on LinkedIn</span><span class="pa">&rarr;</span></div>
+      </a>
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_fraud-is-born-in-governance-ugcPost-7445429119082967040-hWhb" target="_blank" class="post">
+        <div class="pc-head">
+          <div class="pc" data-i18n="post-3-c">Fraud Governance</div>
+          <div class="p-num">v.</div>
+        </div>
+        <div class="pt" data-i18n="post-3-t">Fraud Is Born in Governance</div>
+        <div class="px" data-i18n="post-3-d">Every fraud investigation ends with a name. Very few start with the question that matters: what in the structure made this easy? The approval gaps, the reporting lines with no independence, and the controls that existed on paper but were never enforced as the team grew.</div>
+        <div class="pf"><span data-i18n="post-read">Read on LinkedIn</span><span class="pa">&rarr;</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FEATURED APPEARANCES -->
+<section class="section-media" id="media">
+  <div class="media-inner">
+    <div class="media-hd">
+      <div>
+        <div class="eyebrow"><span class="num">08.</span><span data-i18n="eb-media">Featured Appearances</span></div>
+        <h2 class="sh" data-i18n="media-h">Conversations with peers and <span class="acc">industry leaders.</span></h2>
+      </div>
+      <p class="media-intro" data-i18n="media-intro">Selected podcast appearances, conference talks, and executive roundtables on board-level risk oversight, governance design, and decision-making under uncertainty.</p>
+    </div>
+
+    <div class="media-grid">
+
+      <a href="https://www.buzzsprout.com/2512103/episodes/18835401" target="_blank" class="media-card media-card-featured">
+        <div class="mc-type"><span data-i18n="mc-1-type">Podcast Episode</span></div>
+        <div class="mc-platform" data-i18n="mc-1-platform">The Third Party Risk Institute Podcast</div>
+        <div class="mc-title" data-i18n="mc-1-title">Why Most Risk Governance Systems Fail (And How to Fix Them)</div>
+        <div class="mc-desc" data-i18n="mc-1-desc">A 57-minute conversation on the governance structures that determine how decisions are made, how risks are escalated, and why most risk frameworks fail to prevent the events they were designed for.</div>
+        <div class="mc-host" data-i18n="mc-1-host">With Linda Tuck Chapman</div>
+        <div class="mc-meta">
+          <span data-i18n="mc-1-date">March 2026 · 57 min</span>
+          <span class="mc-arrow">&rarr;</span>
+        </div>
+      </a>
+
+      <div class="media-card media-card-photo">
+        <img class="mcp-img" src="img/speaker.jpeg" alt="Elina Moshkovich speaking at conference">
+        <div class="mcp-content">
+          <div class="mcp-type"><span data-i18n="mc-2-type">Conference Keynote</span></div>
+          <div class="mcp-title" data-i18n="mc-2-title">Information Asymmetry &amp; Board-Level Governance</div>
+          <div class="mcp-platform" data-i18n="mc-2-platform">International Risk &amp; Governance Forum</div>
+          <div class="mcp-date" data-i18n="mc-2-date">2025</div>
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="mc-type"><span data-i18n="mc-3-type">Executive Roundtable</span></div>
+        <div class="mc-platform" data-i18n="mc-3-platform">Cross-Border Risk Forum</div>
+        <div class="mc-title" data-i18n="mc-3-title">Decision-Making Under Uncertainty</div>
+        <div class="mc-desc" data-i18n="mc-3-desc">Closed roundtable for senior risk leaders on how cognitive biases, incentive structures, and leadership maturity shape risk culture and board-level decisions.</div>
+        <div class="mc-meta">
+          <span data-i18n="mc-3-date">2025-2026</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community" id="community">
+  <div class="community-inner">
+    <div class="community-l">
+      <div class="eyebrow"><span class="num">09.</span><span data-i18n="eb-8">Private Community</span></div>
+      <h2 class="sh" data-i18n="comm-h">A private room for <span class="acc">peers.</span></h2>
+      <p class="community-text" data-i18n="comm-text">I run a private Telegram group for senior risk professionals, founders, board members and top executives. Inside, I share templates, working documents, and practical advice on risk management that I do not publish anywhere else.</p>
+    </div>
+    <div class="community-r">
+      <div class="community-features">
+        <div class="cf-item">
+          <div class="cf-label" data-i18n="cf-1-l">Templates</div>
+          <div class="cf-text" data-i18n="cf-1-t">Risk registers, policy frameworks, escalation maps. The actual working files, not theoretical examples.</div>
+        </div>
+        <div class="cf-item">
+          <div class="cf-label" data-i18n="cf-2-l">Case Discussions</div>
+          <div class="cf-text" data-i18n="cf-2-t">Real situations members are working through, with senior peer input. Anonymous when needed.</div>
+        </div>
+        <div class="cf-item">
+          <div class="cf-label" data-i18n="cf-3-l">Practical Advice</div>
+          <div class="cf-text" data-i18n="cf-3-t">Direct answers to specific governance questions. No theory, no consulting jargon.</div>
+        </div>
+        <div class="cf-item">
+          <div class="cf-label" data-i18n="cf-4-l">Quiet Network</div>
+          <div class="cf-text" data-i18n="cf-4-t">A small group of senior practitioners. Vetted membership. Conversations stay inside.</div>
+        </div>
+      </div>
+      <div class="community-audience" data-i18n="comm-aud">For</div>
+      <div class="community-aud-list">
+        <span class="aud-chip" data-i18n="aud-1">Risk Professionals</span>
+        <span class="aud-chip" data-i18n="aud-2">Founders</span>
+        <span class="aud-chip" data-i18n="aud-3">Board Members</span>
+        <span class="aud-chip" data-i18n="aud-4">Top Management</span>
+      </div>
+      <div class="community-cta">
+        <a href="https://t.me/ellin_mos" target="_blank" class="btn-tg" data-i18n="comm-cta">Request Membership</a>
+        <span class="community-note" data-i18n="comm-note">By invitation. Limited capacity.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-cta" id="contact">
+  <div class="cta-l">
+    <div>
+      <div class="cta-l-meta"><span class="cta-l-num">No. 10</span><span data-i18n="cta-meta">Begin the conversation</span></div>
+      <h2 data-i18n="cta-h">Start a conversation <span class="ital">early.</span></h2>
+    </div>
+    <div class="cta-l-bottom" data-i18n="cta-bottom">Most clients wait until something breaks. By then, the cost of fixing it is far higher than the cost of preventing it.</div>
+  </div>
+  <div class="cta-r">
+    <div class="eyebrow"><span class="num">10.</span><span data-i18n="eb-9">Schedule</span></div>
+    <h3 data-i18n="cta-h3">Complimentary 30-minute consultation.</h3>
+    <p class="cta-sub" data-i18n="cta-sub">I will tell you where I think your biggest risks are and whether it makes sense to work together. No sales process. No proposal unless you want one.</p>
+    <div class="cta-actions">
+      <a href="mailto:Elina.Moshkovich@gmail.com" class="btn-light" data-i18n="cta-btn-1">Schedule a Consultation</a>
+      <a href="https://www.linkedin.com/in/elina-moshkovich-41397115" target="_blank" class="btn-light-text" data-i18n="cta-btn-2">Connect on LinkedIn</a>
+    </div>
+    <a href="https://t.me/riskuniversity" target="_blank" class="tg-link" data-i18n="cta-tg">&#x2192; Telegram: Risk University (weekly insights)</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-philosophy">
+    <div class="fp-inner">
+      <div class="fp-label" data-i18n="fp-label">Philosophy</div>
+      <div class="fp-text" data-i18n="fp-text">The purpose of risk management is not to produce a register. It is to make sure that when a real decision has to be made, the right people know what is at stake, who is accountable, and how the organisation will respond. <strong>If the structure cannot deliver that, no framework will save it.</strong></div>
+    </div>
+  </div>
+  <div class="foot-main">
+    <div class="fm-inner">
+      <div class="ft">
+        <a href="#top" class="nb">
+          <div class="nb-mark">R</div>
+          <div class="nb-text">
+            <span class="nb-name" style="color:var(--paper);">Risk University</span>
+            <span class="nb-sub" style="color:rgba(255,255,255,.5);">Europe &middot; USA &middot; GCC</span>
+          </div>
+        </a>
+        <ul class="fl">
+          <li><a href="#triggers">Why Engage</a></li>
+          <li><a href="#about" data-i18n="nav-2">About</a></li>
+          <li><a href="#expertise" data-i18n="nav-3">How I Can Help You</a></li>
+          <li><a href="#proof" data-i18n="nav-4">Engagements</a></li>
+          <li><a href="#insights" data-i18n="nav-5">Insights</a></li>
+          <li><a href="#media" data-i18n="nav-media">Featured</a></li>
+      <li><a href="#community" data-i18n="nav-6">Community</a></li>
+          <li><a href="https://www.linkedin.com/in/elina-moshkovich-41397115" target="_blank">LinkedIn</a></li>
+          <li><a href="https://t.me/riskuniversity" target="_blank">Telegram</a></li>
+        </ul>
+      </div>
+      <div class="fb2">
+        <span class="fcp">&copy; 2026 Risk University &middot; Elina Moshkovich &middot; All rights reserved</span>
+        <span class="ftg" data-i18n="footer-tag">Risk systems built to work in practice. Not just on paper.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openMob(){document.getElementById('mobMenu').classList.add('open');}
+function closeMob(){document.getElementById('mobMenu').classList.remove('open');}
+document.getElementById('mobClose').onclick=closeMob;
+
+// Subtle reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.ec, .case, .post, .di, .trig-item').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease ' + (i * 0.04) + 's, transform 0.6s ease ' + (i * 0.04) + 's';
+  observer.observe(el);
+});
+</script>
+
+<script>
+// ============ I18N ============
+const i18n = {
+  en: {},
+  ru: {
+    // Navigation
+    'nav-1': 'Поводы для обращения',
+    'nav-2': 'Обо мне',
+    'nav-3': 'Мои услуги',
+    'nav-4': 'Кейсы',
+    'nav-5': 'Публикации',
+    'nav-media': 'Выступления',
+    'nav-6': 'Telegram-группа',
+    'nav-cta': 'Запланировать звонок',
+
+    // Hero
+    'hero-eyebrow': 'Управление рисками для компаний, которые серьёзно относятся к росту',
+    'hero-h1': 'Системы управления рисками, <span class="acc">работающие на практике.</span> А не только на бумаге.',
+    'hero-lead': 'Работаю с собственниками, генеральными директорами и руководящими командами. Выстраиваю системы управления рисками, которые отражают реальные процессы компании. Практичные, соразмерные масштабу бизнеса и устойчивые в кризис.',
+    'hero-cta-1': 'Запланировать звонок',
+    'hero-cta-2': 'Это про вас?',
+    'hero-st-1': 'Лет в риск-<br>менеджменте',
+    'hero-st-2': 'Лет в роли<br>CRO',
+    'hero-st-3': 'Послужной список',
+
+    // Hero photo card
+    'hpc-role': 'CRO · Риск-консультант<br>Fractional CRO',
+    'hpc-cred': 'Бывший CRO · Allianz · MetLife',
+    'hpc-li': 'Профиль LinkedIn',
+    'hpc-reach': 'Канал Risk University: международные риск-практики уровня senior с опытом от 5 лет',
+
+    // Statement
+    'statement': 'Управление рисками в компании на 50 человек устроено <span class="acc">принципиально иначе,</span> чем в компании на 5 000. Фреймворки те же. <span class="acc">Всё остальное другое.</span>',
+    'statement-attr': 'Элина Мошкович, Risk University',
+
+    // Section 01: Triggers
+    'eb-1': 'Поводы для обращения',
+    'trig-h': 'Обычно обращаются в <span class="acc">одной из этих ситуаций.</span>',
+    'trig-sub': 'Реальная система управления рисками нужна не только крупным компаниям. Она нужна там, где потеря контроля будет стоить дорого.',
+    'trig-cta': 'Запланировать звонок',
+
+    'trig-1-t': 'Произошёл инцидент, который стоил вам дорого.',
+    'trig-1-d': 'Потеряли клиента. Ушёл ключевой сотрудник. Сорвался контракт. Сигналы были видны давно, но никто не эскалировал потенциальную проблему.',
+    'trig-2-t': 'Инвестор или член совета директоров задал вопрос о системе управления рисками.',
+    'trig-2-d': 'Вы дали уверенный ответ. Позже усомнились в его точности.',
+    'trig-3-t': 'Вы хотите построить систему управления рисками, которая действительно работает.',
+    'trig-3-d': 'Не формальный процесс из десятка политик, не работающих на практике. Реальную систему, соразмерную бизнесу, вашу.',
+    'trig-4-t': 'Предстоит due diligence или регуляторная проверка.',
+    'trig-4-d': 'Вы знаете, что вопросы корпоративного управления окажутся на повестке. Хотите зайти в проверку с подготовленным ответом, а не импровизировать.',
+    'trig-5-t': 'Компания выросла быстрее, чем её структура.',
+    'trig-5-d': 'То, что работало при 20 сотрудниках, не работает при 80. Нет чёткого понимания, как устроен процесс принятия решений и кто за них отвечает.',
+    'trig-6-t': 'Политики утверждены, а инциденты продолжаются.',
+    'trig-6-d': 'Между документами и реальной практикой нет видимой связи. В этом и заключается проблема.',
+
+    // Section 02: About
+    'eb-2': 'Обо мне',
+    'about-h': 'Пятнадцать лет построения систем управления рисками <span class="acc">в международных компаниях.</span>',
+    'about-p1': 'Более пятнадцати лет в корпоративном управлении рисками: консалтинг, финансовые услуги, страхование. Консалтинговый опыт в PwC и KPMG, в том числе в горнодобывающем секторе. Более восьми лет в роли Chief Risk Officer: сначала в MetLife Russia, затем в Allianz Russia. Руководила корпоративной риск-стратегией, надзором за достаточностью капитала, взаимодействием с регуляторами и трансформацией корпоративного управления на уровне совета директоров.',
+    'about-p2': 'Возглавляла функции управления рисками в течение последовательных системных кризисов, включая пандемию COVID-19 и последующий период значительных регуляторных и геополитических изменений. В периоды высокой волатильности команды под моим руководством обеспечивали устойчивость капитала, регуляторную стабильность и операционную непрерывность. Перестраивали системы риск-мониторинга и усиливали поддержку решений высшего руководства в условиях неопределённости.',
+    'about-p3': 'В MetLife Russia возглавляла функцию противодействия мошенничеству. Выстроила комплексную систему управления риском мошенничества: аналитика выявления, протоколы расследований, согласование с регуляторами, отчётность для руководства в строго регулируемой страховой среде. Руководила инициативами по автоматизации, благодаря которым риск-аналитика была интегрирована напрямую в исполнительную отчётность. Руководство видело риск-данные одновременно с бизнес-показателями, а не в отдельном обзоре.',
+    'about-p4': 'Международный опыт включает гармонизацию систем управления рисками между юрисдикциями региона EMEA и приведение разнородных регуляторных требований к единой архитектуре корпоративного управления. Спикер международных конференций и отраслевых форумов. Участник международных подкастов и закрытых executive-круглых столов на тему надзора за рисками на уровне совета директоров и принятия решений в условиях неопределённости.',
+    'about-p5': 'Сегодня консультирую советы директоров и руководящие команды по управлению рисками и архитектуре корпоративного управления. В фокусе: встраивание риск-подхода в стратегические решения, усиление дизайна корпоративного управления, анализ того, как когнитивные искажения, структуры мотивации и зрелость руководства формируют риск-культуру.',
+
+    'sectors-label': 'Отрасли и опыт',
+    'sec-1': 'Финтех и финансовые услуги',
+    'sec-2': 'SaaS и технологии',
+    'sec-3': 'Здравоохранение',
+    'sec-4': 'Страхование и управление активами',
+    'sec-5': 'Компании от 15 до 5 000 сотрудников',
+    'sec-6': 'Клиенты в Европе, США и регионе Залива',
+
+    'cq-text': 'У нас были политики, фреймворки и команда комплаенса. Чего у нас не было, так это работающей системы управления рисками. Элина обнаружила этот разрыв уже в первом разговоре и закрыла его за шесть недель.',
+
+    'about-st-1': 'Лет в управлении рисками',
+    'about-st-2': 'Лет в роли CRO в MetLife и Allianz',
+    'about-st-3': 'Систем риск-менеджмента построено с нуля',
+    'about-st-4': 'До первичной диагностики и плана',
+
+    // Section 03: Services
+    'eb-3': 'Мои услуги',
+    'exp-h': 'Семь форматов работы <span class="acc">с компаниями.</span>',
+    'exp-intro': 'Каждый проект выстраивается под конкретные потребности компании на её текущем этапе. Без стандартных пакетов и шаблонов консалтинга.',
+
+    'ec-1-cat': 'Фундамент',
+    'ec-1-t': 'Построение системы управления рисками',
+    'ec-1-d': 'У вас нет работающей системы управления рисками. Или существующая система описывает компанию, которую вы не узнаёте. Выстраиваю систему, отражающую реальные процессы бизнеса: с ясной ответственностью, простую в поддержании и достаточно надёжную для инвесторов и регуляторов.',
+    'ec-1-pull': 'От первой встречи до работающей структуры за 4–6 недель.',
+
+    'ec-2-cat': 'Капитал',
+    'ec-2-t': 'Подготовка к инвесторам и due diligence',
+    'ec-2-d': 'Вопросы корпоративного управления всегда оказываются на повестке: инвестиционный раунд, сделка M&A, регуляторная проверка. Работаю с вашим руководством над структурой и документацией, которая выдерживает реальный анализ, а не просто хорошо выглядит в презентации.',
+    'ec-2-pull': 'Полный пакет документов для инвесторов за 3 недели.',
+
+    'ec-3-cat': 'Восстановление',
+    'ec-3-t': 'Реагирование на инциденты',
+    'ec-3-d': 'Что-то пошло не так. Финансовая потеря, нарушение комплаенса, уход ключевого сотрудника вместе с критическим знанием. Нахожу место, где сломалась структура, исправляю его и закрываю разрыв так, чтобы второй инцидент по той же причине не повторился через полгода.',
+    'ec-3-pull': 'Анализ корневых причин и структурное решение. Быстро.',
+
+    'ec-4-cat': 'Диагностика',
+    'ec-4-t': 'Оценка зрелости корпоративного управления и риск-менеджмента',
+    'ec-4-d': 'Структурированная оценка зрелости вашей системы корпоративного управления и управления рисками. Выявляю конкретные слабые места в принятии решений, ответственности, контролях, эскалации и культуре. Даю конкретный план закрытия каждой проблемы в порядке приоритета.',
+    'ec-4-pull': 'Конкретные проблемы. Конкретный план. Без теоретических фреймворков.',
+
+    'ec-5-cat': 'Масштаб',
+    'ec-5-t': 'Корпоративное управление для роста',
+    'ec-5-d': 'Компания удвоилась за 18 месяцев. То, как принимались решения при 20 сотрудниках, ломается при 100. Нет ясности, кто за что отвечает. Перестраиваю структуру так, чтобы ответственность росла вместе с компанией, но не добавляла бюрократии, которая тормозит рост.',
+    'ec-5-pull': 'Ответственность, которая растёт вместе с компанией.',
+
+    'ec-6-cat': 'Постоянная работа',
+    'ec-6-t': 'Fractional CRO',
+    'ec-6-d': 'Вам нужна senior-экспертиза в управлении рисками, но не штатная должность. Работаю с вашим руководством на постоянной основе: присутствую при важных решениях, участвую во встречах с инвесторами, где нужна весомая позиция по рискам, остаюсь на связи, когда происходит непредвиденное.',
+    'ec-6-pull': 'Senior-экспертиза по управлению рисками без штатной должности.',
+
+    'ec-7-cat': 'Ключевая практика',
+    'ec-7-t': 'Риск-культура и обучение под вашу компанию',
+    'ec-7-d': 'У самых дорогих провалов в управлении рисками одна общая закономерность: люди видели проблему и молчали. Чаще всего дело не в честности. Компания, нередко непреднамеренно, дала им сигнал, что поднимать вопросы невыгодно. Провожу программы обучения управлению рисками, разработанные под вашу компанию и под каждую аудиторию: членов совета директоров, топ-менеджмент и сотрудников. Проектирую механизмы speak-up, работающие в вашей культуре. Измеряю их эффект как бизнес-метрику, а не как HR-показатель.',
+    'ep-1': 'Тренинги для советов директоров',
+    'ep-2': 'Воркшопы для C-уровня',
+    'ep-3': 'Программы для сотрудников',
+    'ep-4': 'Дизайн speak-up',
+    'ep-5': 'Диагностика культуры',
+
+    // Section 04: Methodology
+    'eb-4': 'Процесс работы',
+    'method-h': 'Понятно с первого дня. <span class="acc">Остаётся вам.</span>',
+    'method-body': 'Работаю поэтапно. Каждый этап даёт что-то применимое. Никаких отчётов на 80 страниц, лежащих без дела. Никаких списков рекомендаций, требующих ещё одного контракта на внедрение. Когда мы завершаем работу, всё построенное принадлежит вашей команде.',
+    'method-cta': 'Запланировать диагностический звонок',
+    'step-1-t': 'Первая консультация. Бесплатно.',
+    'step-1-d': '30-минутный разговор. Задаю вопросы о компании и о том, что вас беспокоит. Вы получаете честную оценку текущей ситуации. Вместе решаем, есть ли смысл продолжать сотрудничество.',
+    'step-1-time': '30 мин',
+    'step-2-t': 'Выявление ключевых рисков',
+    'step-2-d': 'Документирую, как реально принимаются решения, где закреплена ответственность и где находятся разрывы. Вы получаете ясную картину реального риск-профиля компании, а не общий фреймворк, применимый к любому бизнесу.',
+    'step-2-time': '3–5 дней',
+    'step-3-t': 'Приоритетные риски в первую очередь',
+    'step-3-d': 'Определяю две-три ключевые угрозы, которые могут реально навредить бизнесу в ближайшие 12 месяцев. По каждой даю конкретный план. Не цветную таблицу из 40 теоретических рисков.',
+    'step-3-time': '1 неделя',
+    'step-4-t': 'Построение совместно с вашей командой',
+    'step-4-d': 'Выстраиваю систему вместе с вашими людьми, а не за них. Провожу обучение, настраиваю процессы, убеждаюсь, что всё работает, прежде чем отойти в сторону. Ваша команда понимает, как пользоваться системой и зачем она нужна.',
+    'step-4-time': '4–12 недель',
+    'step-5-t': 'Доступна, когда это критично',
+    'step-5-d': 'Вопрос от инвестора, контакт регулятора, что-то непредвиденное. Остаюсь на связи для ситуаций, когда быстро нужна senior-перспектива.',
+    'step-5-time': 'Постоянно',
+
+    // Section 05: Deliverables
+    'eb-5': 'Результаты',
+    'deliv-h': 'Что вы получаете по итогам проекта.',
+    'deliv-r': 'Каждый проект заканчивается конкретными результатами, которые принадлежат вашей команде и могут использоваться без меня. Подход построен под четыре типичных клиентских сценария.',
+    'di-1-l': 'У вас пока нет системы',
+    'di-1-t': 'Формализованная система управления рисками',
+    'di-1-d': 'Для компаний, у которых пока нет формализованной системы управления рисками или она существует только на бумаге. Выстраиваю структуру управления рисками под потребности именно вашей компании с учётом её особенностей и ключевых процессов: основные процессы, ответственные, необходимая документация, соответствие регуляторным требованиям. Не шаблон, а работающая система.',
+    'di-2-l': 'Система есть, но не работает',
+    'di-2-t': 'Усиление существующей системы',
+    'di-2-d': 'Для компаний с существующей системой управления рисками, которая не даёт результата. Анализирую, что не работает и почему. Даю практические рекомендации по усилению. Сопровождаю внедрение, а не просто передаю отчёт.',
+    'di-3-l': 'Регуляторное давление',
+    'di-3-t': 'Документация для регулятора и сопровождение аудитов',
+    'di-3-d': 'Подготовка необходимой документации по управлению рисками в соответствии с требованиями регулятора. Сопровождение регуляторных запросов, инспекций и внешних аудитов. Цель: войти в проверку с подготовленным, выдерживающим анализ ответом, а не импровизировать под давлением.',
+    'di-4-l': 'Потери из-за слабого управления',
+    'di-4-t': 'Анализ разрывов и план восстановления',
+    'di-4-d': 'Выявление ключевых слабых мест в системе принятия решений и корпоративного управления, приводящих к материальным потерям. Список приоритетных разрывов. Конкретный план действий по их устранению. Сопровождение реализации до полного закрытия.',
+
+    // Section 06: Engagements
+    'eb-6': 'Избранные проекты',
+    'proof-h': 'Что меняется по итогам совместной <span class="acc">работы.</span>',
+    'proof-note': 'Все названия и идентифицирующие детали скрыты по запросу клиентов. Все цифры подтверждены на момент закрытия проекта.',
+    'case-1-cs': 'Финтех<br>60 человек · Серия B',
+    'case-2-cs': 'SaaS<br>120 человек',
+    'case-3-cs': 'Здравоохранение<br>200 человек',
+    'case-1-situation': 'Ведущий инвестор обнаружил разрывы в корпоративном управлении за две недели до закрытия сделки. У компании были политики, но не было работающей риск-структуры. Сделке грозило затягивание или пересмотр условий.',
+    'case-1-r1-d': 'от первого звонка до пакета документов корпоративного управления для инвесторов',
+    'case-1-r2-d': 'вопросов по корпоративному управлению получили ответ без повторных запросов',
+    'case-1-r3-d': 'дополнительных условий сделки, связанных с управлением рисками',
+    'case-1-cf': 'Подготовка к инвесторам · Дизайн корпоративного управления',
+
+    'case-2-situation': 'Финансовый директор обнаружил расхождение в 180 тыс. фунтов. Расследование показало: три этапа согласования, существовавшие на бумаге, фактически не применялись. Команда выросла с 15 до 120 человек за два года.',
+    'case-2-r1-d': 'полный аудит риск-управления мошенничеством и редизайн контролей',
+    'case-2-r2-d': 'разрыва в согласованиях закрыты до повторения инцидента',
+    'case-2-r3-d': 'рост сигналов о рисках от команды после тренинга speak-up',
+    'case-2-cf': 'Реагирование на мошенничество · Риск-культура',
+
+    'case-3-situation': 'Регулятор запросил документацию о практиках управления рисками. У компании была команда комплаенса, но не было целостной риск-структуры. Руководству оставалось две недели на подготовку убедительного ответа.',
+    'case-3-r1-d': 'на подготовку полного ответа регулятору с описанием системы управления рисками',
+    'case-3-r2-d': 'дополнительных регуляторных действий после подачи документов',
+    'case-3-r3-d': 'fractional CRO для построения функции внутри компании',
+    'case-3-cf': 'Ответ регулятору · Fractional CRO',
+
+    // Section 07: Insights
+    'eb-7': 'Публикации',
+    'ins-h': 'То, о чём большинство компаний узнаёт <span class="acc">слишком поздно.</span>',
+    'post-1-c': 'Риск-театр',
+    'post-1-t': 'Риск-театр',
+    'post-1-d': 'Реестры рисков представлены. Тепловые карты рассмотрены. Планы митигации утверждены. И те же риски материализуются в следующем квартале. Спектакль про управление рисками не равен управлению рисками. Когда структура не способна оспорить ответ, ответ превращается в ритуал.',
+    'post-2-c': 'Политики напоказ',
+    'post-2-t': 'Политики напоказ',
+    'post-2-d': 'У вашей организации есть политика на всё. Обновляется ежегодно. Подписана. Подшита правильно. И инциденты продолжаются. Разрыв между документом и поведением, это не проблема обучения. Это проблема дизайна. Добавление ещё одной политики делает её хуже.',
+    'post-3-c': 'Управление риском мошенничества',
+    'post-3-t': 'Мошенничество рождается в корпоративном управлении',
+    'post-3-d': 'Каждое расследование мошенничества заканчивается именем. Очень немногие начинаются с правильного вопроса: что в структуре сделало это возможным? Разрывы в согласованиях, линии отчётности без независимости, контроли, существовавшие на бумаге, но не применявшиеся по мере роста команды.',
+    'post-4-c': 'Дизайн KRI',
+    'post-4-t': 'От стратегических целей к KRI',
+    'post-4-d': 'Большинство дашбордов с KRI измеряют активность, а не риск для стратегии. Правильный подход: начинать со стратегической цели и идти назад. Что должно пойти не так, чтобы цель не была достигнута. Что подскажет об этом заранее. Какая цифра это улавливает. Вся работа в переводе, а не в дашборде.',
+    'post-5-c': 'Качество решений',
+    'post-5-t': 'Риск-менеджмент, улучшающий качество решений',
+    'post-5-d': 'Риск-функция, которая производит документы, и риск-функция, которая улучшает решения, это разные вещи. Разница не во фреймворке. Разница в том, есть ли у функции доступ, полномочия и credibility, чтобы заставить руководство задуматься перед решением, которое стоит оспорить. Большинство компаний останавливается на документах.',
+    'post-read': 'Читать в LinkedIn',
+
+    // Section 08: Media
+    'eb-media': 'Публикации и выступления',
+    'media-h': 'Взаимодействие с коллегами и <span class="acc">лидерами индустрии.</span>',
+    'media-intro': 'Избранные подкасты, конференции и закрытые executive-круглые столы по теме надзора за рисками на уровне совета директоров, дизайна корпоративного управления и принятия решений в условиях неопределённости.',
+    'mc-1-type': 'Эпизод подкаста',
+    'mc-1-platform': 'The Third Party Risk Institute Podcast',
+    'mc-1-title': 'Почему большинство систем управления рисками не работает (и как это исправить)',
+    'mc-1-desc': '57-минутный разговор о структурах корпоративного управления, определяющих то, как принимаются решения, как эскалируются риски, и почему большинство риск-фреймворков не предотвращают события, для которых они были созданы.',
+    'mc-1-host': 'С Linda Tuck Chapman',
+    'mc-1-date': 'Март 2026 · 57 мин',
+    'mc-2-type': 'Конференция · Keynote',
+    'mc-2-platform': 'International Risk & Governance Forum',
+    'mc-2-title': 'Информационная асимметрия и корпоративное управление на уровне совета директоров',
+    'mc-2-date': '2025',
+    'mc-3-type': 'Executive-круглый стол',
+    'mc-3-platform': 'Cross-Border Risk Forum',
+    'mc-3-title': 'Принятие решений в условиях неопределённости',
+    'mc-3-desc': 'Закрытый круглый стол для senior-лидеров в управлении рисками. Тема: как когнитивные искажения, структуры мотивации и зрелость руководства формируют риск-культуру и решения на уровне совета директоров.',
+    'mc-3-date': '2025–2026',
+
+    // Section 09: Community
+    'eb-8': 'Закрытая Telegram-группа',
+    'comm-h': 'Закрытое пространство для <span class="acc">профессионалов.</span>',
+    'comm-text': 'Веду закрытую Telegram-группу для senior-специалистов по управлению рисками, фаундеров, членов советов директоров и топ-менеджеров. Делюсь шаблонами, рабочими документами и практическими советами по управлению рисками, которые не публикую больше нигде.',
+    'cf-1-l': 'Шаблоны',
+    'cf-1-t': 'Реестры рисков, структуры политик, карты эскалации. Реальные рабочие файлы, а не теоретические примеры.',
+    'cf-2-l': 'Разбор кейсов',
+    'cf-2-t': 'Реальные ситуации участников с senior peer-обсуждением. Анонимно, когда необходимо.',
+    'cf-3-l': 'Практические советы',
+    'cf-3-t': 'Прямые ответы на конкретные вопросы по корпоративному управлению. Без теории, без консалтингового жаргона.',
+    'cf-4-l': 'Закрытая сеть',
+    'cf-4-t': 'Небольшая группа senior-практиков. Закрытое членство. Разговоры остаются внутри.',
+    'comm-aud': 'Для кого',
+    'aud-1': 'Специалисты по управлению рисками',
+    'aud-2': 'Фаундеры',
+    'aud-3': 'Члены советов директоров',
+    'aud-4': 'Топ-менеджмент',
+    'comm-cta': 'Подать заявку',
+    'comm-note': 'По приглашению. Ограниченная численность.',
+
+    // Section 10: CTA
+    'eb-9': 'Запись',
+    'cta-meta': 'Начать разговор',
+    'cta-h': 'Начните разговор <span class="ital">заранее.</span>',
+    'cta-bottom': 'Большинство клиентов ждут, пока что-то сломается. К этому моменту стоимость устранения проблемы значительно выше стоимости её предотвращения.',
+    'cta-h3': 'Бесплатный 30-минутный разговор.',
+    'cta-sub': 'Скажу, где, на мой взгляд, ваши главные риски, и есть ли смысл работать вместе. Без процесса продажи. Без коммерческого предложения, пока вы его не попросите.',
+    'cta-btn-1': 'Запланировать звонок',
+    'cta-btn-2': 'Связаться в LinkedIn',
+    'cta-tg': '→ Telegram-канал Risk University (еженедельно)',
+
+    // Footer
+    'fp-label': 'Философия',
+    'fp-text': 'Цель риск-менеджмента не в том, чтобы производить реестры. Когда нужно принять реальное решение, нужные люди должны понимать, что поставлено на карту, кто несёт ответственность и как организация будет реагировать. <strong>Если структура не способна это обеспечить, никакой фреймворк её не спасёт.</strong>',
+    'footer-tag': 'Системы управления рисками, работающие на практике. А не только на бумаге.'
+  }
+};
+
+
+const T = (key) => i18n.ru[key] || '';
+
+function applyLang(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (lang === 'ru' && i18n.ru[key]) {
+      if (!el.dataset.original) el.dataset.original = el.innerHTML;
+      el.innerHTML = i18n.ru[key];
+    } else if (lang === 'en' && el.dataset.original) {
+      el.innerHTML = el.dataset.original;
+    }
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  localStorage.setItem('site-lang', lang);
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
+
+const savedLang = localStorage.getItem('site-lang') || 'en';
+if (savedLang === 'ru') applyLang('ru');
+</script>
+
+</body>
+</html>
