@@ -83,9 +83,9 @@ function __(string $key): string
     </ul>
     <div class="lang-toggle">
 <?php if ($staticExport) { ?>
-      <a class="lang-btn<?php echo $locale === 'en' ? ' active' : ''; ?>" href="">EN</a>
+      <a class="lang-btn<?php echo $locale === 'en' ? ' active' : ''; ?>" href="/">EN</a>
       <span class="lang-sep">/</span>
-      <a class="lang-btn<?php echo $locale === 'ru' ? ' active' : ''; ?>" href="ru.html">RU</a>
+      <a class="lang-btn<?php echo $locale === 'ru' ? ' active' : ''; ?>" href="/ru.html">RU</a>
 <?php } else { ?>
       <a class="lang-btn<?php echo $locale === 'en' ? ' active' : ''; ?>" href="?lang=en">EN</a>
       <span class="lang-sep">/</span>
@@ -103,7 +103,7 @@ function __(string $key): string
     <div class="hero-text">
       
       <div class="hero-eyebrow"><?php echo __('hero-eyebrow'); ?></div>
-      <h1><?php echo __('hero-h1'); ?></h1>
+      <h1 class="--<?php echo $locale ?>"><?php echo __('hero-h1'); ?></h1>
       <p class="hero-lead"><?php echo __('hero-lead'); ?></p>
       <div class="hero-cta">
         <a href="<?php echo htmlspecialchars(CALENDLY_BOOKING_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" class="btn-primary"><?php echo __('hero-cta-1'); ?></a>
