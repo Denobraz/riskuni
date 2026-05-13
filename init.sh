@@ -2,22 +2,22 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PUBLIC="${ROOT}/public"
+DOCS="${ROOT}/docs"
 
-mkdir -p "${PUBLIC}"
+mkdir -p "${DOCS}"
 
-SITE_STATIC_EXPORT=1 SITE_LANG=en php "${ROOT}/index.php" > "${PUBLIC}/index.html"
-SITE_STATIC_EXPORT=1 SITE_LANG=ru php "${ROOT}/index.php" > "${PUBLIC}/ru.html"
+SITE_STATIC_EXPORT=1 SITE_LANG=en php "${ROOT}/index.php" > "${DOCS}/index.html"
+SITE_STATIC_EXPORT=1 SITE_LANG=ru php "${ROOT}/index.php" > "${DOCS}/ru.html"
 
 for name in css img; do
   src="${ROOT}/ref/${name}"
   if [[ -d "${src}" ]]; then
-    mkdir -p "${PUBLIC}/${name}"
-    rsync -a "${src}/" "${PUBLIC}/${name}/"
-    echo "Copied ${src}/ -> ${PUBLIC}/${name}/"
+    mkdir -p "${DOCS}/${name}"
+    rsync -a "${src}/" "${DOCS}/${name}/"
+    echo "Copied ${src}/ -> ${DOCS}/${name}/"
   else
     echo "Skip (no dir): ${src}" >&2
   fi
 done
 
-echo "Created ${PUBLIC}/index.html and ${PUBLIC}/ru.html"
+echo "Created ${DOCS}/index.html and ${DOCS}/ru.html"
