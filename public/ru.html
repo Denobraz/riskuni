@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk University · Elina Moshkovich</title>
+<meta name="description" content="Independent risk advisory for companies that are serious about growing. Built on COSO ERM and ISO 31000 principles. Europe, USA and GCC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#x2715;</button>
+  <a href="#triggers" onclick="closeMob()">Поводы для обращения</a>
+  <a href="#about" onclick="closeMob()">Обо мне</a>
+  <a href="#expertise" onclick="closeMob()">Мои услуги</a>
+  <a href="#proof" onclick="closeMob()">Кейсы</a>
+  <a href="#insights" onclick="closeMob()">Публикации</a>
+  <a href="#media" onclick="closeMob()">Публикации и выступления</a>
+  <a href="#community" onclick="closeMob()">Telegram-группа</a>
+  <a href="#contact" onclick="closeMob()" style="color:var(--accent);">Запланировать звонок</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nb">
+      <div class="nb-mark">R</div>
+      <div class="nb-text">
+        <span class="nb-name">Risk University</span>
+        <span class="nb-sub">Europe &middot; USA &middot; GCC</span>
+      </div>
+    </a>
+    <ul class="nl">
+      <li><a href="#triggers">Поводы для обращения</a></li>
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#expertise">Мои услуги</a></li>
+      <li><a href="#proof">Кейсы</a></li>
+      <li><a href="#insights">Публикации</a></li>
+      <li><a href="#media">Выступления</a></li>
+      <li><a href="#community">Telegram-группа</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <a class="lang-btn" href="index.html">EN</a>
+      <span class="lang-sep">/</span>
+      <a class="lang-btn active" href="ru.html">RU</a>
+    </div>
+    <a href="#contact" class="nc">Запланировать звонок</a>
+    <button class="ham" onclick="openMob()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      
+      <div class="hero-eyebrow">Управление рисками для компаний, которые серьёзно относятся к росту</div>
+      <h1>Системы управления рисками, <span class="acc">работающие на практике.</span> А не только на бумаге.</h1>
+      <p class="hero-lead">Работаю с собственниками, генеральными директорами и руководящими командами. Выстраиваю системы управления рисками, которые отражают реальные процессы компании. Практичные, соразмерные масштабу бизнеса и устойчивые в кризис.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Запланировать звонок</a>
+        <a href="#triggers" class="btn-text">Это про вас?</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hst-n">15<span class="small">+</span></div><div class="hst-l">Лет в риск-<br>менеджменте</div></div>
+        <div><div class="hst-n">8<span class="small">+</span></div><div class="hst-l">Лет в роли<br>CRO</div></div>
+        <div><div class="hst-n" style="font-size:1.4rem; line-height:1.3; letter-spacing:.02em;">MetLife<br>Allianz<br>PwC · KPMG</div><div class="hst-l">Послужной список</div></div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="img/hero.jpeg" alt="Elina Moshkovich, Chief Risk Officer">
+      <div class="hero-photo-card">
+        <div class="hpc-name">Elina Moshkovich</div>
+        <div class="hpc-role">CRO · Риск-консультант<br>Fractional CRO</div>
+        <span class="hpc-line"></span>
+        <div class="hpc-cred">Бывший CRO · Allianz · MetLife</div>
+        <a href="https://www.linkedin.com/in/elina-moshkovich-41397115" target="_blank" class="hpc-linkedin">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          <span>Профиль LinkedIn</span>
+        </a>
+        <div class="hpc-reach">Канал Risk University: международные риск-практики уровня senior с опытом от 5 лет</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="statement-inner">
+    <p class="statement-text">Управление рисками в компании на 50 человек устроено <span class="acc">принципиально иначе,</span> чем в компании на 5 000. Фреймворки те же. <span class="acc">Всё остальное другое.</span></p>
+    <div class="statement-attr">Элина Мошкович, Risk University</div>
+  </div>
+</section>
+
+<!-- TRIGGERS -->
+<section class="section section-triggers" id="triggers">
+  <div class="section-inner">
+    <div class="trig-grid">
+      <div class="trig-left">
+        <div class="eyebrow"><span class="num">01.</span><span>Поводы для обращения</span></div>
+        <h2 class="sh">Обычно обращаются в <span class="acc">одной из этих ситуаций.</span></h2>
+        <p class="trig-sub">Реальная система управления рисками нужна не только крупным компаниям. Она нужна там, где потеря контроля будет стоить дорого.</p>
+        <a href="#contact" class="btn-primary">Запланировать звонок</a>
+      </div>
+      <div class="trig-list">
+        <div class="trig-item"><div class="trig-n">i</div><div class="trig-t"><strong>Произошёл инцидент, который стоил вам дорого.</strong><span>Потеряли клиента. Ушёл ключевой сотрудник. Сорвался контракт. Сигналы были видны давно, но никто не эскалировал потенциальную проблему.</span></div></div>
+        <div class="trig-item"><div class="trig-n">ii</div><div class="trig-t"><strong>Инвестор или член совета директоров задал вопрос о системе управления рисками.</strong><span>Вы дали уверенный ответ. Позже усомнились в его точности.</span></div></div>
+        <div class="trig-item"><div class="trig-n">iii</div><div class="trig-t"><strong>Вы хотите построить систему управления рисками, которая действительно работает.</strong><span>Не формальный процесс из десятка политик, не работающих на практике. Реальную систему, соразмерную бизнесу, вашу.</span></div></div>
+        <div class="trig-item"><div class="trig-n">iv</div><div class="trig-t"><strong>Предстоит due diligence или регуляторная проверка.</strong><span>Вы знаете, что вопросы корпоративного управления окажутся на повестке. Хотите зайти в проверку с подготовленным ответом, а не импровизировать.</span></div></div>
+        <div class="trig-item"><div class="trig-n">v</div><div class="trig-t"><strong>Компания выросла быстрее, чем её структура.</strong><span>То, что работало при 20 сотрудниках, не работает при 80. Нет чёткого понимания, как устроен процесс принятия решений и кто за них отвечает.</span></div></div>
+        <div class="trig-item"><div class="trig-n">vi</div><div class="trig-t"><strong>Политики утверждены, а инциденты продолжаются.</strong><span>Между документами и реальной практикой нет видимой связи. В этом и заключается проблема.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <img class="about-photo" src="img/about.jpeg" alt="Elina Moshkovich">
+        <div class="about-photo-tag">
+          <div class="apt-name">Elina Moshkovich</div>
+          <div class="apt-role">CRO &middot; Risk Advisor &middot; Fractional CRO</div>
+          <div class="apt-line"></div>
+          <div class="apt-cred">Former CRO &middot; Allianz &middot; MetLife</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="eyebrow"><span class="num">02.</span><span>Обо мне</span></div>
+        <h2 class="sh">Пятнадцать лет построения систем управления рисками <span class="acc">в международных компаниях.</span></h2>
+        <div class="about-body">
+          <p>Более пятнадцати лет в корпоративном управлении рисками: консалтинг, финансовые услуги, страхование. Консалтинговый опыт в PwC и KPMG, в том числе в горнодобывающем секторе. Более восьми лет в роли Chief Risk Officer: сначала в MetLife Russia, затем в Allianz Russia. Руководила корпоративной риск-стратегией, надзором за достаточностью капитала, взаимодействием с регуляторами и трансформацией корпоративного управления на уровне совета директоров.</p>
+          <p>Возглавляла функции управления рисками в течение последовательных системных кризисов, включая пандемию COVID-19 и последующий период значительных регуляторных и геополитических изменений. В периоды высокой волатильности команды под моим руководством обеспечивали устойчивость капитала, регуляторную стабильность и операционную непрерывность. Перестраивали системы риск-мониторинга и усиливали поддержку решений высшего руководства в условиях неопределённости.</p>
+          <p>В MetLife Russia возглавляла функцию противодействия мошенничеству. Выстроила комплексную систему управления риском мошенничества: аналитика выявления, протоколы расследований, согласование с регуляторами, отчётность для руководства в строго регулируемой страховой среде. Руководила инициативами по автоматизации, благодаря которым риск-аналитика была интегрирована напрямую в исполнительную отчётность. Руководство видело риск-данные одновременно с бизнес-показателями, а не в отдельном обзоре.</p>
+          <p>Международный опыт включает гармонизацию систем управления рисками между юрисдикциями региона EMEA и приведение разнородных регуляторных требований к единой архитектуре корпоративного управления. Спикер международных конференций и отраслевых форумов. Участник международных подкастов и закрытых executive-круглых столов на тему надзора за рисками на уровне совета директоров и принятия решений в условиях неопределённости.</p>
+          <p>Сегодня консультирую советы директоров и руководящие команды по управлению рисками и архитектуре корпоративного управления. В фокусе: встраивание риск-подхода в стратегические решения, усиление дизайна корпоративного управления, анализ того, как когнитивные искажения, структуры мотивации и зрелость руководства формируют риск-культуру.</p>
+        </div>
+        <div class="about-credentials">
+          <div class="ac-label">Отрасли и опыт</div>
+          <div class="ac-list">
+            <div class="ac-item">Финтех и финансовые услуги</div>
+            <div class="ac-item">SaaS и технологии</div>
+            <div class="ac-item">Здравоохранение</div>
+            <div class="ac-item">Страхование и управление активами</div>
+            <div class="ac-item">Компании от 15 до 5 000 сотрудников</div>
+            <div class="ac-item">Клиенты в Европе, США и регионе Залива</div>
+          </div>
+        </div>
+        <div class="cq">
+          <div class="cq-text">У нас были политики, фреймворки и команда комплаенса. Чего у нас не было, так это работающей системы управления рисками. Элина обнаружила этот разрыв уже в первом разговоре и закрыла его за шесть недель.</div>
+          
+        </div>
+        <div class="about-stats">
+          <div><div class="as-v">15<span class="small">+</span></div><div class="as-l">Лет в управлении рисками</div></div>
+          <div><div class="as-v">8<span class="small">+</span></div><div class="as-l">Лет в роли CRO в MetLife и Allianz</div></div>
+          <div><div class="as-v">10<span class="small">+</span></div><div class="as-l">Систем риск-менеджмента построено с нуля</div></div>
+          <div><div class="as-v">2-3<span class="small"> wk</span></div><div class="as-l">До первичной диагностики и плана</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="section section-exp" id="expertise">
+  <div class="section-inner">
+    <div class="exp-hd">
+      <div>
+        <div class="eyebrow"><span class="num">03.</span><span>Мои услуги</span></div>
+        <h2 class="sh">Семь форматов работы <span class="acc">с компаниями.</span></h2>
+      </div>
+      <p class="exp-intro">Каждый проект выстраивается под конкретные потребности компании на её текущем этапе. Без стандартных пакетов и шаблонов консалтинга.</p>
+    </div>
+    <div class="exp-grid">
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">i.</span><span class="ec-cat">Фундамент</span></div>
+        <div class="ec-t">Построение системы управления рисками</div>
+        <div class="ec-d">У вас нет работающей системы управления рисками. Или существующая система описывает компанию, которую вы не узнаёте. Выстраиваю систему, отражающую реальные процессы бизнеса: с ясной ответственностью, простую в поддержании и достаточно надёжную для инвесторов и регуляторов.</div>
+        <div class="ec-pull">От первой встречи до работающей структуры за 4–6 недель.</div>
+      </div>
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">ii.</span><span class="ec-cat">Капитал</span></div>
+        <div class="ec-t">Подготовка к инвесторам и due diligence</div>
+        <div class="ec-d">Вопросы корпоративного управления всегда оказываются на повестке: инвестиционный раунд, сделка M&A, регуляторная проверка. Работаю с вашим руководством над структурой и документацией, которая выдерживает реальный анализ, а не просто хорошо выглядит в презентации.</div>
+        <div class="ec-pull">Полный пакет документов для инвесторов за 3 недели.</div>
+      </div>
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">iii.</span><span class="ec-cat">Восстановление</span></div>
+        <div class="ec-t">Реагирование на инциденты</div>
+        <div class="ec-d">Что-то пошло не так. Финансовая потеря, нарушение комплаенса, уход ключевого сотрудника вместе с критическим знанием. Нахожу место, где сломалась структура, исправляю его и закрываю разрыв так, чтобы второй инцидент по той же причине не повторился через полгода.</div>
+        <div class="ec-pull">Анализ корневых причин и структурное решение. Быстро.</div>
+      </div>
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">iv.</span><span class="ec-cat">Диагностика</span></div>
+        <div class="ec-t">Оценка зрелости корпоративного управления и риск-менеджмента</div>
+        <div class="ec-d">Структурированная оценка зрелости вашей системы корпоративного управления и управления рисками. Выявляю конкретные слабые места в принятии решений, ответственности, контролях, эскалации и культуре. Даю конкретный план закрытия каждой проблемы в порядке приоритета.</div>
+        <div class="ec-pull">Конкретные проблемы. Конкретный план. Без теоретических фреймворков.</div>
+      </div>
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">v.</span><span class="ec-cat">Масштаб</span></div>
+        <div class="ec-t">Корпоративное управление для роста</div>
+        <div class="ec-d">Компания удвоилась за 18 месяцев. То, как принимались решения при 20 сотрудниках, ломается при 100. Нет ясности, кто за что отвечает. Перестраиваю структуру так, чтобы ответственность росла вместе с компанией, но не добавляла бюрократии, которая тормозит рост.</div>
+        <div class="ec-pull">Ответственность, которая растёт вместе с компанией.</div>
+      </div>
+
+      <div class="ec">
+        <div class="ec-head"><span class="ec-n">vi.</span><span class="ec-cat">Постоянная работа</span></div>
+        <div class="ec-t">Fractional CRO</div>
+        <div class="ec-d">Вам нужна senior-экспертиза в управлении рисками, но не штатная должность. Работаю с вашим руководством на постоянной основе: присутствую при важных решениях, участвую во встречах с инвесторами, где нужна весомая позиция по рискам, остаюсь на связи, когда происходит непредвиденное.</div>
+        <div class="ec-pull">Senior-экспертиза по управлению рисками без штатной должности.</div>
+      </div>
+
+      <div class="ec ec-feat">
+        <div>
+          <div class="ec-head"><span class="ec-n">vii.</span><span class="ec-cat">Ключевая практика</span></div>
+          <div class="ec-t">Риск-культура и обучение под вашу компанию</div>
+        </div>
+        <div>
+          <div class="ec-d">У самых дорогих провалов в управлении рисками одна общая закономерность: люди видели проблему и молчали. Чаще всего дело не в честности. Компания, нередко непреднамеренно, дала им сигнал, что поднимать вопросы невыгодно. Провожу программы обучения управлению рисками, разработанные под вашу компанию и под каждую аудиторию: членов совета директоров, топ-менеджмент и сотрудников. Проектирую механизмы speak-up, работающие в вашей культуре. Измеряю их эффект как бизнес-метрику, а не как HR-показатель.</div>
+          <div class="ec-pills">
+            <span class="ep">Тренинги для советов директоров</span>
+            <span class="ep">Воркшопы для C-уровня</span>
+            <span class="ep">Программы для сотрудников</span>
+            <span class="ep">Дизайн speak-up</span>
+            <span class="ep">Диагностика культуры</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="section section-method" id="methodology">
+  <div class="section-inner">
+    <div class="method-grid">
+      <div class="method-l">
+        <div class="eyebrow"><span class="num">04.</span><span>Процесс работы</span></div>
+        <h2 class="sh">Понятно с первого дня. <span class="acc">Остаётся вам.</span></h2>
+        <p class="method-body">Работаю поэтапно. Каждый этап даёт что-то применимое. Никаких отчётов на 80 страниц, лежащих без дела. Никаких списков рекомендаций, требующих ещё одного контракта на внедрение. Когда мы завершаем работу, всё построенное принадлежит вашей команде.</p>
+        <a href="#contact" class="btn-primary">Запланировать диагностический звонок</a>
+      </div>
+      <div class="method-r">
+        <div class="steps">
+          <div class="step">
+            <div class="step-bar"></div>
+            <div class="step-n">i.</div>
+            <div class="step-content">
+              <div class="step-t">Первая консультация. Бесплатно.</div>
+              <div class="step-d">30-минутный разговор. Задаю вопросы о компании и о том, что вас беспокоит. Вы получаете честную оценку текущей ситуации. Вместе решаем, есть ли смысл продолжать сотрудничество.</div>
+            </div>
+            <div class="step-time">30 мин</div>
+          </div>
+          <div class="step">
+            <div class="step-bar"></div>
+            <div class="step-n">ii.</div>
+            <div class="step-content">
+              <div class="step-t">Выявление ключевых рисков</div>
+              <div class="step-d">Документирую, как реально принимаются решения, где закреплена ответственность и где находятся разрывы. Вы получаете ясную картину реального риск-профиля компании, а не общий фреймворк, применимый к любому бизнесу.</div>
+            </div>
+            <div class="step-time">3–5 дней</div>
+          </div>
+          <div class="step">
+            <div class="step-bar"></div>
+            <div class="step-n">iii.</div>
+            <div class="step-content">
+              <div class="step-t">Приоритетные риски в первую очередь</div>
+              <div class="step-d">Определяю две-три ключевые угрозы, которые могут реально навредить бизнесу в ближайшие 12 месяцев. По каждой даю конкретный план. Не цветную таблицу из 40 теоретических рисков.</div>
+            </div>
+            <div class="step-time">1 неделя</div>
+          </div>
+          <div class="step">
+            <div class="step-bar"></div>
+            <div class="step-n">iv.</div>
+            <div class="step-content">
+              <div class="step-t">Построение совместно с вашей командой</div>
+              <div class="step-d">Выстраиваю систему вместе с вашими людьми, а не за них. Провожу обучение, настраиваю процессы, убеждаюсь, что всё работает, прежде чем отойти в сторону. Ваша команда понимает, как пользоваться системой и зачем она нужна.</div>
+            </div>
+            <div class="step-time">4–12 недель</div>
+          </div>
+          <div class="step">
+            <div class="step-bar"></div>
+            <div class="step-n">v.</div>
+            <div class="step-content">
+              <div class="step-t">Доступна, когда это критично</div>
+              <div class="step-d">Вопрос от инвестора, контакт регулятора, что-то непредвиденное. Остаюсь на связи для ситуаций, когда быстро нужна senior-перспектива.</div>
+            </div>
+            <div class="step-time">Постоянно</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="section-deliv">
+  <div class="deliv-inner">
+    <div class="deliv-hd">
+      <div>
+        <div class="eyebrow"><span class="num">05.</span><span>Результаты</span></div>
+        <h2 class="sh">Что вы получаете по итогам проекта.</h2>
+      </div>
+      <div class="deliv-hd-r">Каждый проект заканчивается конкретными результатами, которые принадлежат вашей команде и могут использоваться без меня. Подход построен под четыре типичных клиентских сценария.</div>
+    </div>
+    <div class="deliv-grid">
+      <div class="di">
+        <div class="di-num">01</div>
+        <div class="di-label">У вас пока нет системы</div>
+        <div class="di-t">Формализованная система управления рисками</div>
+        <div class="di-d">Для компаний, у которых пока нет формализованной системы управления рисками или она существует только на бумаге. Выстраиваю структуру управления рисками под потребности именно вашей компании с учётом её особенностей и ключевых процессов: основные процессы, ответственные, необходимая документация, соответствие регуляторным требованиям. Не шаблон, а работающая система.</div>
+      </div>
+      <div class="di">
+        <div class="di-num">02</div>
+        <div class="di-label">Система есть, но не работает</div>
+        <div class="di-t">Усиление существующей системы</div>
+        <div class="di-d">Для компаний с существующей системой управления рисками, которая не даёт результата. Анализирую, что не работает и почему. Даю практические рекомендации по усилению. Сопровождаю внедрение, а не просто передаю отчёт.</div>
+      </div>
+      <div class="di">
+        <div class="di-num">03</div>
+        <div class="di-label">Регуляторное давление</div>
+        <div class="di-t">Документация для регулятора и сопровождение аудитов</div>
+        <div class="di-d">Подготовка необходимой документации по управлению рисками в соответствии с требованиями регулятора. Сопровождение регуляторных запросов, инспекций и внешних аудитов. Цель: войти в проверку с подготовленным, выдерживающим анализ ответом, а не импровизировать под давлением.</div>
+      </div>
+      <div class="di">
+        <div class="di-num">04</div>
+        <div class="di-label">Потери из-за слабого управления</div>
+        <div class="di-t">Анализ разрывов и план восстановления</div>
+        <div class="di-d">Выявление ключевых слабых мест в системе принятия решений и корпоративного управления, приводящих к материальным потерям. Список приоритетных разрывов. Конкретный план действий по их устранению. Сопровождение реализации до полного закрытия.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="section section-proof" id="proof">
+  <div class="section-inner">
+    <div class="proof-hd">
+      <div>
+        <div class="eyebrow"><span class="num">06.</span><span>Избранные проекты</span></div>
+        <h2 class="sh">Что меняется по итогам совместной <span class="acc">работы.</span></h2>
+      </div>
+      <p class="proof-note">Все названия и идентифицирующие детали скрыты по запросу клиентов. Все цифры подтверждены на момент закрытия проекта.</p>
+    </div>
+    <div class="cases">
+      <div class="case">
+        <div class="cs-head">
+          <div class="cs-num">i.</div>
+          <div class="cs">Финтех<br>60 человек · Серия B</div>
+        </div>
+        <div class="csit">Ведущий инвестор обнаружил разрывы в корпоративном управлении за две недели до закрытия сделки. У компании были политики, но не было работающей риск-структуры. Сделке грозило затягивание или пересмотр условий.</div>
+        <div class="crs">
+          <div class="cr"><div class="cn">3<span class="small"> wk</span></div><div class="cd">от первого звонка до пакета документов корпоративного управления для инвесторов</div></div>
+          <div class="cr"><div class="cn">100<span class="small">%</span></div><div class="cd">вопросов по корпоративному управлению получили ответ без повторных запросов</div></div>
+          <div class="cr"><div class="cn">0</div><div class="cd">дополнительных условий сделки, связанных с управлением рисками</div></div>
+        </div>
+        <div class="cf">Подготовка к инвесторам · Дизайн корпоративного управления</div>
+      </div>
+      <div class="case">
+        <div class="cs-head">
+          <div class="cs-num">ii.</div>
+          <div class="cs">SaaS<br>120 человек</div>
+        </div>
+        <div class="csit">Финансовый директор обнаружил расхождение в 180 тыс. фунтов. Расследование показало: три этапа согласования, существовавшие на бумаге, фактически не применялись. Команда выросла с 15 до 120 человек за два года.</div>
+        <div class="crs">
+          <div class="cr"><div class="cn">6<span class="small"> wk</span></div><div class="cd">полный аудит риск-управления мошенничеством и редизайн контролей</div></div>
+          <div class="cr"><div class="cn">4</div><div class="cd">разрыва в согласованиях закрыты до повторения инцидента</div></div>
+          <div class="cr"><div class="cn">2<span class="small">x</span></div><div class="cd">рост сигналов о рисках от команды после тренинга speak-up</div></div>
+        </div>
+        <div class="cf">Реагирование на мошенничество · Риск-культура</div>
+      </div>
+      <div class="case">
+        <div class="cs-head">
+          <div class="cs-num">iii.</div>
+          <div class="cs">Здравоохранение<br>200 человек</div>
+        </div>
+        <div class="csit">Регулятор запросил документацию о практиках управления рисками. У компании была команда комплаенса, но не было целостной риск-структуры. Руководству оставалось две недели на подготовку убедительного ответа.</div>
+        <div class="crs">
+          <div class="cr"><div class="cn">12<span class="small"> d</span></div><div class="cd">на подготовку полного ответа регулятору с описанием системы управления рисками</div></div>
+          <div class="cr"><div class="cn">0</div><div class="cd">дополнительных регуляторных действий после подачи документов</div></div>
+          <div class="cr"><div class="cn">6<span class="small"> mo</span></div><div class="cd">fractional CRO для построения функции внутри компании</div></div>
+        </div>
+        <div class="cf">Ответ регулятору · Fractional CRO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section class="section section-insights" id="insights">
+  <div class="section-inner">
+    <div class="ins-hd">
+      <div>
+        <div class="eyebrow"><span class="num">07.</span><span>Публикации</span></div>
+        <h2 class="sh">То, о чём большинство компаний узнаёт <span class="acc">слишком поздно.</span></h2>
+      </div>
+      <div class="tags-row">
+        <span class="tag on">Risk Theater</span>
+        <span class="tag on">Policy Theater</span>
+        <span class="tag">Fraud Governance</span>
+        <span class="tag">Risk Culture</span>
+        <span class="tag">Investor Readiness</span>
+        <span class="tag">Escalation Design</span>
+      </div>
+    </div>
+    <div class="posts">
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_governance-boardeffectiveness-riskmanagement-share-7419806316895895553-YcZz" target="_blank" class="post">
+        <div class="pc-head">
+          <div class="pc">Риск-театр</div>
+          <div class="p-num">i.</div>
+        </div>
+        <div class="pt">Риск-театр</div>
+        <div class="px">Реестры рисков представлены. Тепловые карты рассмотрены. Планы митигации утверждены. И те же риски материализуются в следующем квартале. Спектакль про управление рисками не равен управлению рисками. Когда структура не способна оспорить ответ, ответ превращается в ритуал.</div>
+        <div class="pf"><span>Читать в LinkedIn</span><span class="pa">&rarr;</span></div>
+      </a>
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-governance-cro-share-7452290477904691201-qJ_m" target="_blank" class="post">
+        <div class="pc-head">
+          <div class="pc">Дизайн KRI</div>
+          <div class="p-num">ii.</div>
+        </div>
+        <div class="pt">От стратегических целей к KRI</div>
+        <div class="px">Большинство дашбордов с KRI измеряют активность, а не риск для стратегии. Правильный подход: начинать со стратегической цели и идти назад. Что должно пойти не так, чтобы цель не была достигнута. Что подскажет об этом заранее. Какая цифра это улавливает. Вся работа в переводе, а не в дашборде.</div>
+        <div class="pf"><span>Читать в LinkedIn</span><span class="pa">&rarr;</span></div>
+      </a>
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-rm2-governance-share-7454169487253135361--UuZ" target="_blank" class="post">
+        <div class="pc-head">
+          <div class="pc">Качество решений</div>
+          <div class="p-num">iii.</div>
+        </div>
+        <div class="pt">Риск-менеджмент, улучшающий качество решений</div>
+        <div class="px">Риск-функция, которая производит документы, и риск-функция, которая улучшает решения, это разные вещи. Разница не во фреймворке. Разница в том, есть ли у функции доступ, полномочия и credibility, чтобы заставить руководство задуматься перед решением, которое стоит оспорить. Большинство компаний останавливается на документах.</div>
+        <div class="pf"><span>Читать в LinkedIn</span><span class="pa">&rarr;</span></div>
+      </a>
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-cro-riskculture-share-7429852234730852352-Y9F3" target="_blank" class="post">
+        <div class="pc-head">
+          <div class="pc">Политики напоказ</div>
+          <div class="p-num">iv.</div>
+        </div>
+        <div class="pt">Политики напоказ</div>
+        <div class="px">У вашей организации есть политика на всё. Обновляется ежегодно. Подписана. Подшита правильно. И инциденты продолжаются. Разрыв между документом и поведением, это не проблема обучения. Это проблема дизайна. Добавление ещё одной политики делает её хуже.</div>
+        <div class="pf"><span>Читать в LinkedIn</span><span class="pa">&rarr;</span></div>
+      </a>
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_fraud-is-born-in-governance-ugcPost-7445429119082967040-hWhb" target="_blank" class="post">
+        <div class="pc-head">
+          <div class="pc">Управление риском мошенничества</div>
+          <div class="p-num">v.</div>
+        </div>
+        <div class="pt">Мошенничество рождается в корпоративном управлении</div>
+        <div class="px">Каждое расследование мошенничества заканчивается именем. Очень немногие начинаются с правильного вопроса: что в структуре сделало это возможным? Разрывы в согласованиях, линии отчётности без независимости, контроли, существовавшие на бумаге, но не применявшиеся по мере роста команды.</div>
+        <div class="pf"><span>Читать в LinkedIn</span><span class="pa">&rarr;</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FEATURED APPEARANCES -->
+<section class="section-media" id="media">
+  <div class="media-inner">
+    <div class="media-hd">
+      <div>
+        <div class="eyebrow"><span class="num">08.</span><span>Публикации и выступления</span></div>
+        <h2 class="sh">Взаимодействие с коллегами и <span class="acc">лидерами индустрии.</span></h2>
+      </div>
+      <p class="media-intro">Избранные подкасты, конференции и закрытые executive-круглые столы по теме надзора за рисками на уровне совета директоров, дизайна корпоративного управления и принятия решений в условиях неопределённости.</p>
+    </div>
+
+    <div class="media-grid">
+
+      <a href="https://www.buzzsprout.com/2512103/episodes/18835401" target="_blank" class="media-card media-card-featured">
+        <div class="mc-type"><span>Эпизод подкаста</span></div>
+        <div class="mc-platform">The Third Party Risk Institute Podcast</div>
+        <div class="mc-title">Почему большинство систем управления рисками не работает (и как это исправить)</div>
+        <div class="mc-desc">57-минутный разговор о структурах корпоративного управления, определяющих то, как принимаются решения, как эскалируются риски, и почему большинство риск-фреймворков не предотвращают события, для которых они были созданы.</div>
+        <div class="mc-host">С Linda Tuck Chapman</div>
+        <div class="mc-meta">
+          <span>Март 2026 · 57 мин</span>
+          <span class="mc-arrow">&rarr;</span>
+        </div>
+      </a>
+
+      <div class="media-card media-card-photo">
+        <img class="mcp-img" src="img/speaker.jpeg" alt="Elina Moshkovich speaking at conference">
+        <div class="mcp-content">
+          <div class="mcp-type"><span>Конференция · Keynote</span></div>
+          <div class="mcp-title">Информационная асимметрия и корпоративное управление на уровне совета директоров</div>
+          <div class="mcp-platform">International Risk & Governance Forum</div>
+          <div class="mcp-date">2025</div>
+        </div>
+      </div>
+
+      <div class="media-card">
+        <div class="mc-type"><span>Executive-круглый стол</span></div>
+        <div class="mc-platform">Cross-Border Risk Forum</div>
+        <div class="mc-title">Принятие решений в условиях неопределённости</div>
+        <div class="mc-desc">Закрытый круглый стол для senior-лидеров в управлении рисками. Тема: как когнитивные искажения, структуры мотивации и зрелость руководства формируют риск-культуру и решения на уровне совета директоров.</div>
+        <div class="mc-meta">
+          <span>2025–2026</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community" id="community">
+  <div class="community-inner">
+    <div class="community-l">
+      <div class="eyebrow"><span class="num">09.</span><span>Закрытая Telegram-группа</span></div>
+      <h2 class="sh">Закрытое пространство для <span class="acc">профессионалов.</span></h2>
+      <p class="community-text">Веду закрытую Telegram-группу для senior-специалистов по управлению рисками, фаундеров, членов советов директоров и топ-менеджеров. Делюсь шаблонами, рабочими документами и практическими советами по управлению рисками, которые не публикую больше нигде.</p>
+    </div>
+    <div class="community-r">
+      <div class="community-features">
+        <div class="cf-item">
+          <div class="cf-label">Шаблоны</div>
+          <div class="cf-text">Реестры рисков, структуры политик, карты эскалации. Реальные рабочие файлы, а не теоретические примеры.</div>
+        </div>
+        <div class="cf-item">
+          <div class="cf-label">Разбор кейсов</div>
+          <div class="cf-text">Реальные ситуации участников с senior peer-обсуждением. Анонимно, когда необходимо.</div>
+        </div>
+        <div class="cf-item">
+          <div class="cf-label">Практические советы</div>
+          <div class="cf-text">Прямые ответы на конкретные вопросы по корпоративному управлению. Без теории, без консалтингового жаргона.</div>
+        </div>
+        <div class="cf-item">
+          <div class="cf-label">Закрытая сеть</div>
+          <div class="cf-text">Небольшая группа senior-практиков. Закрытое членство. Разговоры остаются внутри.</div>
+        </div>
+      </div>
+      <div class="community-audience">Для кого</div>
+      <div class="community-aud-list">
+        <span class="aud-chip">Специалисты по управлению рисками</span>
+        <span class="aud-chip">Фаундеры</span>
+        <span class="aud-chip">Члены советов директоров</span>
+        <span class="aud-chip">Топ-менеджмент</span>
+      </div>
+      <div class="community-cta">
+        <a href="https://t.me/ellin_mos" target="_blank" class="btn-tg">Подать заявку</a>
+        <span class="community-note">По приглашению. Ограниченная численность.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-cta" id="contact">
+  <div class="cta-l">
+    <div>
+      <div class="cta-l-meta"><span class="cta-l-num">No. 10</span><span>Начать разговор</span></div>
+      <h2>Начните разговор <span class="ital">заранее.</span></h2>
+    </div>
+    <div class="cta-l-bottom">Большинство клиентов ждут, пока что-то сломается. К этому моменту стоимость устранения проблемы значительно выше стоимости её предотвращения.</div>
+  </div>
+  <div class="cta-r">
+    <div class="eyebrow"><span class="num">10.</span><span>Запись</span></div>
+    <h3>Бесплатный 30-минутный разговор.</h3>
+    <p class="cta-sub">Скажу, где, на мой взгляд, ваши главные риски, и есть ли смысл работать вместе. Без процесса продажи. Без коммерческого предложения, пока вы его не попросите.</p>
+    <div class="cta-actions">
+      <a href="mailto:Elina.Moshkovich@gmail.com" class="btn-light">Запланировать звонок</a>
+      <a href="https://www.linkedin.com/in/elina-moshkovich-41397115" target="_blank" class="btn-light-text">Связаться в LinkedIn</a>
+    </div>
+    <a href="https://t.me/riskuniversity" target="_blank" class="tg-link">→ Telegram-канал Risk University (еженедельно)</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-philosophy">
+    <div class="fp-inner">
+      <div class="fp-label">Философия</div>
+      <div class="fp-text">Цель риск-менеджмента не в том, чтобы производить реестры. Когда нужно принять реальное решение, нужные люди должны понимать, что поставлено на карту, кто несёт ответственность и как организация будет реагировать. <strong>Если структура не способна это обеспечить, никакой фреймворк её не спасёт.</strong></div>
+    </div>
+  </div>
+  <div class="foot-main">
+    <div class="fm-inner">
+      <div class="ft">
+        <a href="#top" class="nb">
+          <div class="nb-mark">R</div>
+          <div class="nb-text">
+            <span class="nb-name" style="color:var(--paper);">Risk University</span>
+            <span class="nb-sub" style="color:rgba(255,255,255,.5);">Europe &middot; USA &middot; GCC</span>
+          </div>
+        </a>
+        <ul class="fl">
+          <li><a href="#triggers">Поводы для обращения</a></li>
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#expertise">Мои услуги</a></li>
+          <li><a href="#proof">Кейсы</a></li>
+          <li><a href="#insights">Публикации</a></li>
+          <li><a href="#media">Выступления</a></li>
+      <li><a href="#community">Telegram-группа</a></li>
+          <li><a href="https://www.linkedin.com/in/elina-moshkovich-41397115" target="_blank">LinkedIn</a></li>
+          <li><a href="https://t.me/riskuniversity" target="_blank">Telegram</a></li>
+        </ul>
+      </div>
+      <div class="fb2">
+        <span class="fcp">&copy; 2026 Risk University &middot; Elina Moshkovich &middot; All rights reserved</span>
+        <span class="ftg">Системы управления рисками, работающие на практике. А не только на бумаге.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openMob(){document.getElementById('mobMenu').classList.add('open');}
+function closeMob(){document.getElementById('mobMenu').classList.remove('open');}
+document.getElementById('mobClose').onclick=closeMob;
+
+// Subtle reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.ec, .case, .post, .di, .trig-item').forEach((el, i) => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease ' + (i * 0.04) + 's, transform 0.6s ease ' + (i * 0.04) + 's';
+  observer.observe(el);
+});
+</script>
+
+
+</body>
+</html>
