@@ -452,55 +452,54 @@ function __(string $key): string
         <div class="eyebrow"><span class="num">07.</span><span><?php echo __('eb-7'); ?></span></div>
         <h2 class="sh"><?php echo __('ins-h'); ?></h2>
       </div>
-      <div class="tags-row">
-        <span class="tag on">Risk Theater</span>
-        <span class="tag on">Policy Theater</span>
-        <span class="tag">Fraud Governance</span>
-        <span class="tag">Risk Culture</span>
-        <span class="tag">Investor Readiness</span>
-        <span class="tag">Escalation Design</span>
+      <div class="tags-row" role="group" aria-label="<?php echo htmlspecialchars(__('ins-tags-aria'), ENT_QUOTES, 'UTF-8'); ?>">
+        <button type="button" class="tag ins-tag" data-tag="risk-theater" aria-pressed="false"><?php echo __('ins-tag-risk-theater'); ?></button>
+        <button type="button" class="tag ins-tag" data-tag="policy-theater" aria-pressed="false"><?php echo __('ins-tag-policy-theater'); ?></button>
+        <button type="button" class="tag ins-tag" data-tag="fraud-governance" aria-pressed="false"><?php echo __('ins-tag-fraud-governance'); ?></button>
+        <button type="button" class="tag ins-tag" data-tag="kri-design" aria-pressed="false"><?php echo __('ins-tag-kri-design'); ?></button>
+        <button type="button" class="tag ins-tag" data-tag="decision-quality" aria-pressed="false"><?php echo __('ins-tag-decision-quality'); ?></button>
       </div>
     </div>
     <div class="posts">
-      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_governance-boardeffectiveness-riskmanagement-share-7419806316895895553-YcZz" target="_blank" class="post">
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_governance-boardeffectiveness-riskmanagement-share-7419806316895895553-YcZz" target="_blank" rel="noopener noreferrer" class="post" data-tags="risk-theater">
         <div class="pc-head">
-          <div class="pc"><?php echo __('post-1-c'); ?></div>
+          <div class="pc"><span><?php echo __('ins-tag-risk-theater'); ?></span></div>
           <div class="p-num">i.</div>
         </div>
         <div class="pt"><?php echo __('post-1-t'); ?></div>
         <div class="px"><?php echo __('post-1-d'); ?></div>
         <div class="pf"><span><?php echo __('post-read'); ?></span><span class="pa">&rarr;</span></div>
       </a>
-      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-governance-cro-share-7452290477904691201-qJ_m" target="_blank" class="post">
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-governance-cro-share-7452290477904691201-qJ_m" target="_blank" rel="noopener noreferrer" class="post" data-tags="kri-design">
         <div class="pc-head">
-          <div class="pc"><?php echo __('post-4-c'); ?></div>
+          <div class="pc"><span><?php echo __('ins-tag-kri-design'); ?></span></div>
           <div class="p-num">ii.</div>
         </div>
         <div class="pt"><?php echo __('post-4-t'); ?></div>
         <div class="px"><?php echo __('post-4-d'); ?></div>
         <div class="pf"><span><?php echo __('post-read'); ?></span><span class="pa">&rarr;</span></div>
       </a>
-      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-rm2-governance-share-7454169487253135361--UuZ" target="_blank" class="post">
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-rm2-governance-share-7454169487253135361--UuZ" target="_blank" rel="noopener noreferrer" class="post" data-tags="decision-quality">
         <div class="pc-head">
-          <div class="pc"><?php echo __('post-5-c'); ?></div>
+          <div class="pc"><span><?php echo __('ins-tag-decision-quality'); ?></span></div>
           <div class="p-num">iii.</div>
         </div>
         <div class="pt"><?php echo __('post-5-t'); ?></div>
         <div class="px"><?php echo __('post-5-d'); ?></div>
         <div class="pf"><span><?php echo __('post-read'); ?></span><span class="pa">&rarr;</span></div>
       </a>
-      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-cro-riskculture-share-7429852234730852352-Y9F3" target="_blank" class="post">
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_riskmanagement-cro-riskculture-share-7429852234730852352-Y9F3" target="_blank" rel="noopener noreferrer" class="post" data-tags="policy-theater">
         <div class="pc-head">
-          <div class="pc"><?php echo __('post-2-c'); ?></div>
+          <div class="pc"><span><?php echo __('ins-tag-policy-theater'); ?></span></div>
           <div class="p-num">iv.</div>
         </div>
         <div class="pt"><?php echo __('post-2-t'); ?></div>
         <div class="px"><?php echo __('post-2-d'); ?></div>
         <div class="pf"><span><?php echo __('post-read'); ?></span><span class="pa">&rarr;</span></div>
       </a>
-      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_fraud-is-born-in-governance-ugcPost-7445429119082967040-hWhb" target="_blank" class="post">
+      <a href="https://www.linkedin.com/posts/elina-moshkovich-41397115_fraud-is-born-in-governance-ugcPost-7445429119082967040-hWhb" target="_blank" rel="noopener noreferrer" class="post" data-tags="fraud-governance">
         <div class="pc-head">
-          <div class="pc"><?php echo __('post-3-c'); ?></div>
+          <div class="pc"><span><?php echo __('ins-tag-fraud-governance'); ?></span></div>
           <div class="p-num">v.</div>
         </div>
         <div class="pt"><?php echo __('post-3-t'); ?></div>
@@ -664,9 +663,9 @@ function __(string $key): string
 </footer>
 
 <script>
-function toggleMob(){document.getElementById('mobMenu').classList.toggle('open');}
-function closeMob(){document.getElementById('mobMenu').classList.remove('open');}
-document.getElementById('mobClose').onclick=closeMob;
+function toggleMob(){var m=document.getElementById('mobMenu');if(m)m.classList.toggle('open');}
+function closeMob(){var m=document.getElementById('mobMenu');if(m)m.classList.remove('open');}
+(function(){var c=document.getElementById('mobClose');if(c)c.onclick=closeMob;})();
 
 // Subtle reveal on scroll
 const observer = new IntersectionObserver((entries) => {
@@ -684,6 +683,47 @@ document.querySelectorAll('.ec, .case, .post, .di, .trig-item').forEach((el, i) 
   el.style.transition = 'opacity 0.6s ease ' + (i * 0.04) + 's, transform 0.6s ease ' + (i * 0.04) + 's';
   observer.observe(el);
 });
+
+(function initInsightsTags() {
+  var section = document.getElementById('insights');
+  if (!section) return;
+  var posts = section.querySelectorAll('.posts a.post[data-tags]');
+  if (!posts.length) return;
+
+  function activeTags() {
+    var ids = [];
+    section.querySelectorAll('button.ins-tag[data-tag].on').forEach(function (b) {
+      ids.push(b.getAttribute('data-tag'));
+    });
+    return ids;
+  }
+
+  function applyFilter() {
+    var sel = activeTags();
+    posts.forEach(function (post) {
+      if (!sel.length) {
+        post.classList.remove('ins-filter-hidden');
+        return;
+      }
+      var raw = post.getAttribute('data-tags') || '';
+      var tags = raw.split(/\s+/).filter(Boolean);
+      var show = sel.some(function (t) { return tags.indexOf(t) !== -1; });
+      if (show) post.classList.remove('ins-filter-hidden');
+      else post.classList.add('ins-filter-hidden');
+    });
+  }
+
+  section.addEventListener('click', function (ev) {
+    var btn = ev.target.closest('button.ins-tag[data-tag]');
+    if (!btn || !section.contains(btn)) return;
+    ev.preventDefault();
+    btn.classList.toggle('on');
+    btn.setAttribute('aria-pressed', btn.classList.contains('on') ? 'true' : 'false');
+    applyFilter();
+  });
+
+  applyFilter();
+})();
 </script>
 
 
