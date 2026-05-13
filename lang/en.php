@@ -182,6 +182,8 @@ return [
     'sec-5' => 'Companies from 15 to 5,000 people',
     'sec-6' => 'Clients across Europe, USA, GCC',
     'sectors-label' => 'Sectors &amp; Experience',
+    'seo-description' => 'Independent risk advisory for companies that are serious about growing. Built on COSO ERM and ISO 31000 principles. Europe, USA and GCC.',
+    'seo-title' => 'Risk University · Elina Moshkovich',
     'statement' => 'Good risk management for a 50-person company looks <span class="acc">nothing like</span> it does for a 5,000-person one. The frameworks are the same. <span class="acc">Everything else is different.</span>',
     'statement-attr' => 'Elina Moshkovich, Risk University',
     'step-1-d' => 'A 30-minute conversation. I ask about your company and what is worrying you. You get an honest read on where you are. We decide together if it makes sense to go further.',

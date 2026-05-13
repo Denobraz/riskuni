@@ -5,6 +5,7 @@ declare(strict_types=1);
 const LINKEDIN_PROFILE_URL = 'https://www.linkedin.com/in/elina-moshkovich-41397115';
 const TELEGRAM_CHANNEL_URL = 'https://t.me/riskuniversity';
 const TELEGRAM_MEMBERSHIP_URL = 'https://t.me/ellin_mos';
+const CALENDLY_BOOKING_URL = 'https://calendly.com/elina-moshkovich/30min';
 
 /** Режим статической сборки: задаётся в init.sh (SITE_STATIC_EXPORT=1, SITE_LANG=en|ru) */
 $staticExport = getenv('SITE_STATIC_EXPORT') === '1';
@@ -39,8 +40,8 @@ function __(string $key): string
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Risk University · Elina Moshkovich</title>
-<meta name="description" content="Independent risk advisory for companies that are serious about growing. Built on COSO ERM and ISO 31000 principles. Europe, USA and GCC.">
+<title><?php echo htmlspecialchars(__('seo-title'), ENT_QUOTES, 'UTF-8'); ?></title>
+<meta name="description" content="<?php echo htmlspecialchars(__('seo-description'), ENT_QUOTES, 'UTF-8'); ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -58,7 +59,7 @@ function __(string $key): string
   <a href="#insights" onclick="closeMob()"><?php echo __('nav-5'); ?></a>
   <a href="#media" onclick="closeMob()"><?php echo __('eb-media'); ?></a>
   <a href="#community" onclick="closeMob()"><?php echo __('nav-6'); ?></a>
-  <a href="#contact" onclick="closeMob()" style="color:var(--accent);"><?php echo __('nav-cta'); ?></a>
+  <a href="<?php echo htmlspecialchars(CALENDLY_BOOKING_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" onclick="closeMob()" style="color:var(--accent);"><?php echo __('nav-cta'); ?></a>
 </div>
 
 <!-- NAV -->
@@ -82,7 +83,7 @@ function __(string $key): string
     </ul>
     <div class="lang-toggle">
 <?php if ($staticExport) { ?>
-      <a class="lang-btn<?php echo $locale === 'en' ? ' active' : ''; ?>" href="index.html">EN</a>
+      <a class="lang-btn<?php echo $locale === 'en' ? ' active' : ''; ?>" href="">EN</a>
       <span class="lang-sep">/</span>
       <a class="lang-btn<?php echo $locale === 'ru' ? ' active' : ''; ?>" href="ru.html">RU</a>
 <?php } else { ?>
@@ -91,7 +92,7 @@ function __(string $key): string
       <a class="lang-btn<?php echo $locale === 'ru' ? ' active' : ''; ?>" href="?lang=ru">RU</a>
 <?php } ?>
     </div>
-    <a href="#contact" class="nc"><?php echo __('nav-cta'); ?></a>
+    <a href="<?php echo htmlspecialchars(CALENDLY_BOOKING_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" class="nc"><?php echo __('nav-cta'); ?></a>
     <button class="ham" onclick="openMob()"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -105,7 +106,7 @@ function __(string $key): string
       <h1><?php echo __('hero-h1'); ?></h1>
       <p class="hero-lead"><?php echo __('hero-lead'); ?></p>
       <div class="hero-cta">
-        <a href="#contact" class="btn-primary"><?php echo __('hero-cta-1'); ?></a>
+        <a href="<?php echo htmlspecialchars(CALENDLY_BOOKING_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" class="btn-primary"><?php echo __('hero-cta-1'); ?></a>
         <a href="#triggers" class="btn-text"><?php echo __('hero-cta-2'); ?></a>
       </div>
       <div class="hero-stats">
@@ -149,7 +150,7 @@ function __(string $key): string
         <div class="eyebrow"><span class="num">01.</span><span><?php echo __('eb-1'); ?></span></div>
         <h2 class="sh"><?php echo __('trig-h'); ?></h2>
         <p class="trig-sub"><?php echo __('trig-sub'); ?></p>
-        <a href="#contact" class="btn-primary"><?php echo __('trig-cta'); ?></a>
+        <a href="<?php echo htmlspecialchars(CALENDLY_BOOKING_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" class="btn-primary"><?php echo __('trig-cta'); ?></a>
       </div>
       <div class="trig-list">
         <div class="trig-item"><div class="trig-n">i</div><div class="trig-t"><strong><?php echo __('trig-1-t'); ?></strong><span><?php echo __('trig-1-d'); ?></span></div></div>
@@ -295,7 +296,7 @@ function __(string $key): string
         <div class="eyebrow"><span class="num">04.</span><span><?php echo __('eb-4'); ?></span></div>
         <h2 class="sh"><?php echo __('method-h'); ?></h2>
         <p class="method-body"><?php echo __('method-body'); ?></p>
-        <a href="#contact" class="btn-primary"><?php echo __('method-cta'); ?></a>
+        <a href="<?php echo htmlspecialchars(CALENDLY_BOOKING_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" class="btn-primary"><?php echo __('method-cta'); ?></a>
       </div>
       <div class="method-r">
         <div class="steps">
@@ -617,7 +618,7 @@ function __(string $key): string
     <h3><?php echo __('cta-h3'); ?></h3>
     <p class="cta-sub"><?php echo __('cta-sub'); ?></p>
     <div class="cta-actions">
-      <a href="mailto:Elina.Moshkovich@gmail.com" class="btn-light"><?php echo __('cta-btn-1'); ?></a>
+      <a href="<?php echo htmlspecialchars(CALENDLY_BOOKING_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer" class="btn-light"><?php echo __('cta-btn-1'); ?></a>
       <a href="<?php echo htmlspecialchars(LINKEDIN_PROFILE_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" class="btn-light-text"><?php echo __('cta-btn-2'); ?></a>
     </div>
     <a href="<?php echo htmlspecialchars(TELEGRAM_CHANNEL_URL, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" class="tg-link"><?php echo __('cta-tg'); ?></a>
