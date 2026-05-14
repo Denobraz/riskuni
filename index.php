@@ -34,6 +34,117 @@ function __(string $key): string
     return $translations[$key] ?? $key;
 }
 
+function seo_plain(string $key): string
+{
+    return trim(html_entity_decode(strip_tags(__($key)), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+}
+
+/** Базовый URL без завершающего слэша. При необходимости переопределите переменной окружения SITE_BASE_URL. */
+$siteBaseUrl = rtrim((string) (getenv('SITE_BASE_URL') ?: 'https://riskuni.com'), '/');
+$canonicalPath = $staticExport
+    ? ($locale === 'ru' ? '/ru.html' : '/')
+    : '/index.php' . ($locale === 'ru' ? '?lang=ru' : '');
+$canonicalUrl = $siteBaseUrl . $canonicalPath;
+$sitemapUrl = $siteBaseUrl . '/sitemap.xml';
+$ogImageUrl = $siteBaseUrl . '/img/hero.jpeg';
+$ogLocale = $locale === 'ru' ? 'ru_RU' : 'en_US';
+
+$personId = $canonicalUrl . '#person-elina';
+$businessId = $canonicalUrl . '#risk-university';
+
+$ldGraph = [
+    [
+        '@type' => 'Person',
+        '@id' => $personId,
+        'name' => 'Elina Moshkovich',
+        'givenName' => 'Elina',
+        'familyName' => 'Moshkovich',
+        'jobTitle' => 'Risk Consultant',
+        'description' => seo_plain('seo-description'),
+        'url' => $canonicalUrl,
+        'sameAs' => [LINKEDIN_PROFILE_URL],
+        'knowsAbout' => [
+            'Enterprise risk management',
+            'Corporate governance',
+            'COSO ERM',
+            'ISO 31000',
+            'Fractional CRO',
+        ],
+        'areaServed' => [
+            ['@type' => 'Place', 'name' => 'Europe'],
+            ['@type' => 'Place', 'name' => 'United States'],
+            ['@type' => 'Place', 'name' => 'GCC'],
+        ],
+        'worksFor' => ['@id' => $businessId],
+    ],
+    [
+        '@type' => 'ProfessionalService',
+        '@id' => $businessId,
+        'name' => 'Risk University',
+        'description' => seo_plain('seo-description'),
+        'url' => $canonicalUrl,
+        'image' => $ogImageUrl,
+        'areaServed' => [
+            ['@type' => 'Place', 'name' => 'Europe'],
+            ['@type' => 'Place', 'name' => 'United States'],
+            ['@type' => 'Place', 'name' => 'GCC'],
+        ],
+        'founder' => ['@id' => $personId],
+        'sameAs' => [LINKEDIN_PROFILE_URL, TELEGRAM_CHANNEL_URL],
+    ],
+    [
+        '@type' => 'Service',
+        '@id' => $canonicalUrl . '#service-risk-system-design',
+        'name' => seo_plain('ec-1-t'),
+        'description' => seo_plain('ec-1-d'),
+        'url' => $canonicalUrl . '#expertise',
+        'provider' => ['@id' => $businessId],
+        'areaServed' => ['Europe', 'United States', 'GCC'],
+    ],
+    [
+        '@type' => 'Service',
+        '@id' => $canonicalUrl . '#service-investor-readiness',
+        'name' => seo_plain('ec-2-t'),
+        'description' => seo_plain('ec-2-d'),
+        'url' => $canonicalUrl . '#expertise',
+        'provider' => ['@id' => $businessId],
+        'areaServed' => ['Europe', 'United States', 'GCC'],
+    ],
+    [
+        '@type' => 'Service',
+        '@id' => $canonicalUrl . '#service-fractional-cro',
+        'name' => seo_plain('ec-6-t'),
+        'description' => seo_plain('ec-6-d'),
+        'url' => $canonicalUrl . '#expertise',
+        'provider' => ['@id' => $businessId],
+        'areaServed' => ['Europe', 'United States', 'GCC'],
+    ],
+    [
+        '@type' => 'FAQPage',
+        'mainEntity' => array_map(
+            static function (int $i): array {
+                return [
+                    '@type' => 'Question',
+                    'name' => seo_plain('faq-' . $i . '-q'),
+                    'acceptedAnswer' => [
+                        '@type' => 'Answer',
+                        'text' => seo_plain('faq-' . $i . '-a'),
+                    ],
+                ];
+            },
+            [1, 2, 3, 4]
+        ),
+    ],
+];
+
+$structuredDataJson = json_encode(
+    [
+        '@context' => 'https://schema.org',
+        '@graph' => $ldGraph,
+    ],
+    JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_APOS
+);
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo htmlspecialchars($locale, ENT_QUOTES, 'UTF-8'); ?>">
@@ -42,10 +153,26 @@ function __(string $key): string
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php echo htmlspecialchars(__('seo-title'), ENT_QUOTES, 'UTF-8'); ?></title>
 <meta name="description" content="<?php echo htmlspecialchars(__('seo-description'), ENT_QUOTES, 'UTF-8'); ?>">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="<?php echo htmlspecialchars($sitemapUrl, ENT_QUOTES, 'UTF-8'); ?>">
+<meta name="google-site-verification" content="7subHqvKilqm_hr2FQHkFqMGF0v_CtLnQRi4yAvc4Oc">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="<?php echo htmlspecialchars($ogLocale, ENT_QUOTES, 'UTF-8'); ?>">
+<meta property="og:url" content="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
+<meta property="og:title" content="<?php echo htmlspecialchars(__('seo-title'), ENT_QUOTES, 'UTF-8'); ?>">
+<meta property="og:description" content="<?php echo htmlspecialchars(__('seo-description'), ENT_QUOTES, 'UTF-8'); ?>">
+<meta property="og:image" content="<?php echo htmlspecialchars($ogImageUrl, ENT_QUOTES, 'UTF-8'); ?>">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<?php echo htmlspecialchars(__('seo-title'), ENT_QUOTES, 'UTF-8'); ?>">
+<meta name="twitter:description" content="<?php echo htmlspecialchars(__('seo-description'), ENT_QUOTES, 'UTF-8'); ?>">
+<meta name="twitter:image" content="<?php echo htmlspecialchars($ogImageUrl, ENT_QUOTES, 'UTF-8'); ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.jpeg" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json"><?php echo $structuredDataJson; ?></script>
 </head>
 <body>
 
@@ -116,7 +243,7 @@ function __(string $key): string
       </div>
     </div>
     <div class="hero-photo">
-      <img src="img/hero.jpeg" alt="Elina Moshkovich, Chief Risk Officer">
+      <img src="img/hero.jpeg" alt="Elina Moshkovich, Chief Risk Officer" fetchpriority="high" decoding="async">
       <div class="hero-photo-card">
         <div class="hpc-name">Elina Moshkovich</div>
         <div class="hpc-role"><?php echo __('hpc-role'); ?></div>
@@ -169,7 +296,7 @@ function __(string $key): string
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-photo-wrap">
-        <img class="about-photo" src="img/about.jpeg" alt="Elina Moshkovich">
+        <img class="about-photo" src="img/about.jpeg" alt="Elina Moshkovich" loading="lazy" decoding="async">
         <div class="about-photo-tag">
           <div class="apt-name">Elina Moshkovich</div>
           <div class="apt-role">CRO &middot; Risk Advisor &middot; Fractional CRO</div>
@@ -227,42 +354,42 @@ function __(string $key): string
 
       <div class="ec">
         <div class="ec-head"><span class="ec-n">i.</span><span class="ec-cat"><?php echo __('ec-1-cat'); ?></span></div>
-        <div class="ec-t"><?php echo __('ec-1-t'); ?></div>
+        <h3 class="ec-t"><?php echo __('ec-1-t'); ?></h3>
         <div class="ec-d"><?php echo __('ec-1-d'); ?></div>
         <div class="ec-pull"><?php echo __('ec-1-pull'); ?></div>
       </div>
 
       <div class="ec">
         <div class="ec-head"><span class="ec-n">ii.</span><span class="ec-cat"><?php echo __('ec-2-cat'); ?></span></div>
-        <div class="ec-t"><?php echo __('ec-2-t'); ?></div>
+        <h3 class="ec-t"><?php echo __('ec-2-t'); ?></h3>
         <div class="ec-d"><?php echo __('ec-2-d'); ?></div>
         <div class="ec-pull"><?php echo __('ec-2-pull'); ?></div>
       </div>
 
       <div class="ec">
         <div class="ec-head"><span class="ec-n">iii.</span><span class="ec-cat"><?php echo __('ec-3-cat'); ?></span></div>
-        <div class="ec-t"><?php echo __('ec-3-t'); ?></div>
+        <h3 class="ec-t"><?php echo __('ec-3-t'); ?></h3>
         <div class="ec-d"><?php echo __('ec-3-d'); ?></div>
         <div class="ec-pull"><?php echo __('ec-3-pull'); ?></div>
       </div>
 
       <div class="ec">
         <div class="ec-head"><span class="ec-n">iv.</span><span class="ec-cat"><?php echo __('ec-4-cat'); ?></span></div>
-        <div class="ec-t"><?php echo __('ec-4-t'); ?></div>
+        <h3 class="ec-t"><?php echo __('ec-4-t'); ?></h3>
         <div class="ec-d"><?php echo __('ec-4-d'); ?></div>
         <div class="ec-pull"><?php echo __('ec-4-pull'); ?></div>
       </div>
 
       <div class="ec">
         <div class="ec-head"><span class="ec-n">v.</span><span class="ec-cat"><?php echo __('ec-5-cat'); ?></span></div>
-        <div class="ec-t"><?php echo __('ec-5-t'); ?></div>
+        <h3 class="ec-t"><?php echo __('ec-5-t'); ?></h3>
         <div class="ec-d"><?php echo __('ec-5-d'); ?></div>
         <div class="ec-pull"><?php echo __('ec-5-pull'); ?></div>
       </div>
 
       <div class="ec">
         <div class="ec-head"><span class="ec-n">vi.</span><span class="ec-cat"><?php echo __('ec-6-cat'); ?></span></div>
-        <div class="ec-t"><?php echo __('ec-6-t'); ?></div>
+        <h3 class="ec-t"><?php echo __('ec-6-t'); ?></h3>
         <div class="ec-d"><?php echo __('ec-6-d'); ?></div>
         <div class="ec-pull"><?php echo __('ec-6-pull'); ?></div>
       </div>
@@ -270,7 +397,7 @@ function __(string $key): string
       <div class="ec ec-feat">
         <div>
           <div class="ec-head"><span class="ec-n">vii.</span><span class="ec-cat"><?php echo __('ec-7-cat'); ?></span></div>
-          <div class="ec-t"><?php echo __('ec-7-t'); ?></div>
+          <h3 class="ec-t"><?php echo __('ec-7-t'); ?></h3>
         </div>
         <div>
           <div class="ec-d"><?php echo __('ec-7-d'); ?></div>
@@ -304,8 +431,8 @@ function __(string $key): string
             <div class="step-bar"></div>
             <div class="step-n">i.</div>
             <div class="step-content">
-              <div class="step-t"><?php echo __('step-1-t'); ?></div>
-              <div class="step-d"><?php echo __('step-1-d'); ?></div>
+              <h3 class="step-t"><?php echo __('step-1-t'); ?></h3>
+            <div class="step-d"><?php echo __('step-1-d'); ?></div>
             </div>
             <div class="step-time"><?php echo __('step-1-time'); ?></div>
           </div>
@@ -313,8 +440,8 @@ function __(string $key): string
             <div class="step-bar"></div>
             <div class="step-n">ii.</div>
             <div class="step-content">
-              <div class="step-t"><?php echo __('step-2-t'); ?></div>
-              <div class="step-d"><?php echo __('step-2-d'); ?></div>
+              <h3 class="step-t"><?php echo __('step-2-t'); ?></h3>
+            <div class="step-d"><?php echo __('step-2-d'); ?></div>
             </div>
             <div class="step-time"><?php echo __('step-2-time'); ?></div>
           </div>
@@ -322,8 +449,8 @@ function __(string $key): string
             <div class="step-bar"></div>
             <div class="step-n">iii.</div>
             <div class="step-content">
-              <div class="step-t"><?php echo __('step-3-t'); ?></div>
-              <div class="step-d"><?php echo __('step-3-d'); ?></div>
+              <h3 class="step-t"><?php echo __('step-3-t'); ?></h3>
+            <div class="step-d"><?php echo __('step-3-d'); ?></div>
             </div>
             <div class="step-time"><?php echo __('step-3-time'); ?></div>
           </div>
@@ -331,8 +458,8 @@ function __(string $key): string
             <div class="step-bar"></div>
             <div class="step-n">iv.</div>
             <div class="step-content">
-              <div class="step-t"><?php echo __('step-4-t'); ?></div>
-              <div class="step-d"><?php echo __('step-4-d'); ?></div>
+              <h3 class="step-t"><?php echo __('step-4-t'); ?></h3>
+            <div class="step-d"><?php echo __('step-4-d'); ?></div>
             </div>
             <div class="step-time"><?php echo __('step-4-time'); ?></div>
           </div>
@@ -340,8 +467,8 @@ function __(string $key): string
             <div class="step-bar"></div>
             <div class="step-n">v.</div>
             <div class="step-content">
-              <div class="step-t"><?php echo __('step-5-t'); ?></div>
-              <div class="step-d"><?php echo __('step-5-d'); ?></div>
+              <h3 class="step-t"><?php echo __('step-5-t'); ?></h3>
+            <div class="step-d"><?php echo __('step-5-d'); ?></div>
             </div>
             <div class="step-time"><?php echo __('step-5-time'); ?></div>
           </div>
@@ -365,25 +492,25 @@ function __(string $key): string
       <div class="di">
         <div class="di-num">01</div>
         <div class="di-label"><?php echo __('di-1-l'); ?></div>
-        <div class="di-t"><?php echo __('di-1-t'); ?></div>
+        <h3 class="di-t"><?php echo __('di-1-t'); ?></h3>
         <div class="di-d"><?php echo __('di-1-d'); ?></div>
       </div>
       <div class="di">
         <div class="di-num">02</div>
         <div class="di-label"><?php echo __('di-2-l'); ?></div>
-        <div class="di-t"><?php echo __('di-2-t'); ?></div>
+        <h3 class="di-t"><?php echo __('di-2-t'); ?></h3>
         <div class="di-d"><?php echo __('di-2-d'); ?></div>
       </div>
       <div class="di">
         <div class="di-num">03</div>
         <div class="di-label"><?php echo __('di-3-l'); ?></div>
-        <div class="di-t"><?php echo __('di-3-t'); ?></div>
+        <h3 class="di-t"><?php echo __('di-3-t'); ?></h3>
         <div class="di-d"><?php echo __('di-3-d'); ?></div>
       </div>
       <div class="di">
         <div class="di-num">04</div>
         <div class="di-label"><?php echo __('di-4-l'); ?></div>
-        <div class="di-t"><?php echo __('di-4-t'); ?></div>
+        <h3 class="di-t"><?php echo __('di-4-t'); ?></h3>
         <div class="di-d"><?php echo __('di-4-d'); ?></div>
       </div>
     </div>
@@ -466,7 +593,7 @@ function __(string $key): string
           <div class="pc"><span><?php echo __('ins-tag-risk-theater'); ?></span></div>
           <div class="p-num">i.</div>
         </div>
-        <div class="pt"><?php echo __('post-1-t'); ?></div>
+        <h3 class="pt"><?php echo __('post-1-t'); ?></h3>
         <div class="px"><?php echo __('post-1-d'); ?></div>
         <div class="pf"><span><?php echo __('post-read'); ?></span><span class="pa">&rarr;</span></div>
       </a>
@@ -475,7 +602,7 @@ function __(string $key): string
           <div class="pc"><span><?php echo __('ins-tag-kri-design'); ?></span></div>
           <div class="p-num">ii.</div>
         </div>
-        <div class="pt"><?php echo __('post-4-t'); ?></div>
+        <h3 class="pt"><?php echo __('post-4-t'); ?></h3>
         <div class="px"><?php echo __('post-4-d'); ?></div>
         <div class="pf"><span><?php echo __('post-read'); ?></span><span class="pa">&rarr;</span></div>
       </a>
@@ -484,7 +611,7 @@ function __(string $key): string
           <div class="pc"><span><?php echo __('ins-tag-decision-quality'); ?></span></div>
           <div class="p-num">iii.</div>
         </div>
-        <div class="pt"><?php echo __('post-5-t'); ?></div>
+        <h3 class="pt"><?php echo __('post-5-t'); ?></h3>
         <div class="px"><?php echo __('post-5-d'); ?></div>
         <div class="pf"><span><?php echo __('post-read'); ?></span><span class="pa">&rarr;</span></div>
       </a>
@@ -493,7 +620,7 @@ function __(string $key): string
           <div class="pc"><span><?php echo __('ins-tag-policy-theater'); ?></span></div>
           <div class="p-num">iv.</div>
         </div>
-        <div class="pt"><?php echo __('post-2-t'); ?></div>
+        <h3 class="pt"><?php echo __('post-2-t'); ?></h3>
         <div class="px"><?php echo __('post-2-d'); ?></div>
         <div class="pf"><span><?php echo __('post-read'); ?></span><span class="pa">&rarr;</span></div>
       </a>
@@ -502,7 +629,7 @@ function __(string $key): string
           <div class="pc"><span><?php echo __('ins-tag-fraud-governance'); ?></span></div>
           <div class="p-num">v.</div>
         </div>
-        <div class="pt"><?php echo __('post-3-t'); ?></div>
+        <h3 class="pt"><?php echo __('post-3-t'); ?></h3>
         <div class="px"><?php echo __('post-3-d'); ?></div>
         <div class="pf"><span><?php echo __('post-read'); ?></span><span class="pa">&rarr;</span></div>
       </a>
@@ -528,7 +655,7 @@ function __(string $key): string
       <a href="https://www.buzzsprout.com/2512103/episodes/18835401" target="_blank" class="media-card media-card-featured">
         <div class="mc-type"><span><?php echo __('mc-1-type'); ?></span></div>
         <div class="mc-platform"><?php echo __('mc-1-platform'); ?></div>
-        <div class="mc-title"><?php echo __('mc-1-title'); ?></div>
+        <h3 class="mc-title"><?php echo __('mc-1-title'); ?></h3>
         <div class="mc-desc"><?php echo __('mc-1-desc'); ?></div>
         <div class="mc-host"><?php echo __('mc-1-host'); ?></div>
         <div class="mc-meta">
@@ -538,10 +665,10 @@ function __(string $key): string
       </a>
 
       <div class="media-card media-card-photo">
-        <img class="mcp-img" src="img/speaker.jpeg" alt="Elina Moshkovich speaking at conference">
+        <img class="mcp-img" src="img/speaker.jpeg" alt="Elina Moshkovich speaking at conference" loading="lazy" decoding="async">
         <div class="mcp-content">
           <div class="mcp-type"><span><?php echo __('mc-2-type'); ?></span></div>
-          <div class="mcp-title"><?php echo __('mc-2-title'); ?></div>
+          <h3 class="mcp-title"><?php echo __('mc-2-title'); ?></h3>
           <div class="mcp-platform"><?php echo __('mc-2-platform'); ?></div>
           <div class="mcp-date"><?php echo __('mc-2-date'); ?></div>
         </div>
@@ -550,7 +677,7 @@ function __(string $key): string
       <div class="media-card">
         <div class="mc-type"><span><?php echo __('mc-3-type'); ?></span></div>
         <div class="mc-platform"><?php echo __('mc-3-platform'); ?></div>
-        <div class="mc-title"><?php echo __('mc-3-title'); ?></div>
+        <h3 class="mc-title"><?php echo __('mc-3-title'); ?></h3>
         <div class="mc-desc"><?php echo __('mc-3-desc'); ?></div>
         <div class="mc-meta">
           <span><?php echo __('mc-3-date'); ?></span>
@@ -662,69 +789,7 @@ function __(string $key): string
   </div>
 </footer>
 
-<script>
-function toggleMob(){var m=document.getElementById('mobMenu');if(m)m.classList.toggle('open');}
-function closeMob(){var m=document.getElementById('mobMenu');if(m)m.classList.remove('open');}
-(function(){var c=document.getElementById('mobClose');if(c)c.onclick=closeMob;})();
-
-// Subtle reveal on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.ec, .case, .post, .di, .trig-item').forEach((el, i) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.6s ease ' + (i * 0.04) + 's, transform 0.6s ease ' + (i * 0.04) + 's';
-  observer.observe(el);
-});
-
-(function initInsightsTags() {
-  var section = document.getElementById('insights');
-  if (!section) return;
-  var posts = section.querySelectorAll('.posts a.post[data-tags]');
-  if (!posts.length) return;
-
-  function activeTags() {
-    var ids = [];
-    section.querySelectorAll('button.ins-tag[data-tag].on').forEach(function (b) {
-      ids.push(b.getAttribute('data-tag'));
-    });
-    return ids;
-  }
-
-  function applyFilter() {
-    var sel = activeTags();
-    posts.forEach(function (post) {
-      if (!sel.length) {
-        post.classList.remove('ins-filter-hidden');
-        return;
-      }
-      var raw = post.getAttribute('data-tags') || '';
-      var tags = raw.split(/\s+/).filter(Boolean);
-      var show = sel.some(function (t) { return tags.indexOf(t) !== -1; });
-      if (show) post.classList.remove('ins-filter-hidden');
-      else post.classList.add('ins-filter-hidden');
-    });
-  }
-
-  section.addEventListener('click', function (ev) {
-    var btn = ev.target.closest('button.ins-tag[data-tag]');
-    if (!btn || !section.contains(btn)) return;
-    ev.preventDefault();
-    btn.classList.toggle('on');
-    btn.setAttribute('aria-pressed', btn.classList.contains('on') ? 'true' : 'false');
-    applyFilter();
-  });
-
-  applyFilter();
-})();
-</script>
+<script src="js/main.js" defer></script>
 
 
 </body>

@@ -37,6 +37,11 @@ body {
 
 img { max-width:100%; display:block; }
 
+/* h3 используется для подзаголовков секций (иерархия H1→H2→H3) */
+h3.ec-t, h3.step-t, h3.di-t, .post h3.pt, h3.mc-title, h3.mcp-title {
+    margin-top:0;
+}
+
 /* ============ NAV ============ */
 nav {
     position:fixed; top:0; left:0; right:0; z-index:200;

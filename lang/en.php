@@ -217,4 +217,12 @@ return [
     'trig-cta' => 'Start with a 30-min Call',
     'trig-h' => 'The conversation usually starts <span class="acc">here.</span>',
     'trig-sub' => 'You don&rsquo;t need to be a large company to need real risk management. You need to be a company where losing control would cost you something.',
+    'faq-1-q' => 'Who is Risk University for?',
+    'faq-1-a' => 'Founders, CEOs, boards and leadership teams who want practical enterprise risk management and governance—not paperwork theatre. Typical clients are scaling companies across Europe, the USA and the GCC.',
+    'faq-2-q' => 'Do you only work with financial services companies?',
+    'faq-2-a' => 'No. Engagements span fintech, SaaS, healthcare, insurance and other sectors. The approach is grounded in COSO ERM and ISO 31000 but tailored to how your organisation actually operates.',
+    'faq-3-q' => 'What is fractional CRO support?',
+    'faq-3-a' => 'Senior risk leadership on a part-time or retainer basis: help with material decisions, investor conversations, regulatory moments and building internal capability without a full-time Chief Risk Officer hire.',
+    'faq-4-q' => 'How do we start?',
+    'faq-4-a' => 'With a complimentary 30-minute consultation to understand your context and whether there is a fit. If it makes sense, we agree scope, timeline and deliverables before deeper work begins.',
 ];
