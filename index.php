@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 /** Публичные ссылки на соцсети и мессенджеры */
 const LINKEDIN_PROFILE_URL = 'https://www.linkedin.com/in/elina-moshkovich-41397115';
-const TELEGRAM_CHANNEL_URL = 'https://t.me/riskuniversity';
+const TELEGRAM_CHANNEL_URL = 'https://t.me/ellin_mos';
 const TELEGRAM_MEMBERSHIP_URL = 'https://t.me/ellin_mos';
 const CALENDLY_BOOKING_URL = 'https://calendly.com/elina-moshkovich/30min';
 
