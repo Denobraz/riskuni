@@ -56,9 +56,9 @@ $ldGraph = [
     [
         '@type' => 'Person',
         '@id' => $personId,
-        'name' => 'Elina Moshkovich',
-        'givenName' => 'Elina',
-        'familyName' => 'Moshkovich',
+        'name' => seo_plain('person-name'),
+        'givenName' => seo_plain('person-given-name'),
+        'familyName' => seo_plain('person-family-name'),
         'jobTitle' => 'Risk Consultant',
         'description' => seo_plain('seo-description'),
         'url' => $canonicalUrl,
@@ -243,9 +243,9 @@ $structuredDataJson = json_encode(
       </div>
     </div>
     <div class="hero-photo">
-      <img src="img/hero.jpeg" alt="Elina Moshkovich, Chief Risk Officer" fetchpriority="high" decoding="async">
+      <img src="img/hero.jpeg" alt="<?php echo htmlspecialchars(__('img-alt-hero'), ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" decoding="async">
       <div class="hero-photo-card">
-        <div class="hpc-name">Elina Moshkovich</div>
+        <div class="hpc-name"><?php echo __('person-name'); ?></div>
         <div class="hpc-role"><?php echo __('hpc-role'); ?></div>
         <span class="hpc-line"></span>
         <div class="hpc-cred"><?php echo __('hpc-cred'); ?></div>
@@ -296,9 +296,9 @@ $structuredDataJson = json_encode(
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-photo-wrap">
-        <img class="about-photo" src="img/about.jpeg" alt="Elina Moshkovich" loading="lazy" decoding="async">
+        <img class="about-photo" src="img/about.jpeg" alt="<?php echo htmlspecialchars(__('img-alt-about'), ENT_QUOTES, 'UTF-8'); ?>" loading="lazy" decoding="async">
         <div class="about-photo-tag">
-          <div class="apt-name">Elina Moshkovich</div>
+          <div class="apt-name"><?php echo __('person-name'); ?></div>
           <div class="apt-role">CRO &middot; Risk Advisor &middot; Fractional CRO</div>
           <div class="apt-line"></div>
           <div class="apt-cred">Former CRO &middot; Allianz &middot; MetLife</div>
@@ -665,7 +665,7 @@ $structuredDataJson = json_encode(
       </a>
 
       <div class="media-card media-card-photo">
-        <img class="mcp-img" src="img/speaker.jpeg" alt="Elina Moshkovich speaking at conference" loading="lazy" decoding="async">
+        <img class="mcp-img" src="img/speaker.jpeg" alt="<?php echo htmlspecialchars(__('img-alt-speaker'), ENT_QUOTES, 'UTF-8'); ?>" loading="lazy" decoding="async">
         <div class="mcp-content">
           <div class="mcp-type"><span><?php echo __('mc-2-type'); ?></span></div>
           <h3 class="mcp-title"><?php echo __('mc-2-title'); ?></h3>
@@ -782,7 +782,7 @@ $structuredDataJson = json_encode(
         </ul>
       </div>
       <div class="fb2">
-        <span class="fcp">&copy; 2026 Risk University &middot; Elina Moshkovich &middot; All rights reserved</span>
+        <span class="fcp"><?php echo __('footer-copyright'); ?></span>
         <span class="ftg"><?php echo __('footer-tag'); ?></span>
       </div>
     </div>
